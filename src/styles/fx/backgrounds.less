@@ -1,0 +1,26 @@
+@import (reference) "../_base/helpers";
+
+/*.....................................
+  BACKGROUNDS
+.....................................*/
+
+.for-each(@pair in @background-colors) {
+  @key: at(@pair, 1);
+  @color: at(@pair, 2);
+  .bg-@{key} {
+    background-color: @color;
+  }
+}
+
+.bg-cover {
+  background-position {
+    background-color: 50% 50%;
+  }
+  .background-size(cover);
+}
+
+img.bg-cover {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 100%;
+}

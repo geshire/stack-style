@@ -1,0 +1,185 @@
+@import (reference) "../_base/helpers";
+
+/*.....................................
+  ARROWS
+.....................................*/
+.arrow {
+  position: relative;
+  box-sizing: border-box;
+
+  background:  at(at(@arrow-colors, 1), 2);
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    box-sizing: border-box;
+
+    border: 5px solid black;
+
+    transform-origin: 0 0;
+    transform: rotate(-45deg);
+  }
+
+  .for-each(@pair in @border-colors) {
+    @key: at(@pair, 1);
+    @color: at(@pair, 2);
+    &.border--@{key} {
+      &::after {
+        box-shadow: -1px 1px 0px 0 @color;
+      }
+    }
+  }
+
+  &.shadow {
+    &::after {
+      .box-shadow(@shadow);
+    }
+  }
+}
+
+.arrow-bottom-left,
+.arrow-bottom-right,
+.arrow-bottom-middle {
+  .for-each(@pair in @arrow-colors) {
+    @key: at(@pair, 1);
+    @color: at(@pair, 2);
+    &.arrow--@{key} {
+      &::after {
+        border-color: transparent transparent @color @color;
+      }
+    }
+  }
+}
+.arrow-bottom-left {
+  .arrow;
+  &::after {
+    margin-left: -5px;
+    bottom: -10px;
+    left: 30px;
+  }
+}
+.arrow-bottom-middle {
+  .arrow;
+  &::after {
+    margin-left: -5px;
+    bottom: -10px;
+    left: 50%;
+  }
+}
+.arrow-bottom-right {
+  .arrow;
+  &::after {
+    bottom: -10px;
+    right: 20px;
+  }
+}
+
+.arrow-left-middle,
+.arrow-left-top,
+.arrow-left-bottom {
+  .for-each(@pair in @arrow-colors) {
+    @key: at(@pair, 1);
+    @color: at(@pair, 2);
+    &.arrow--@{key} {
+      &::after {
+        border-color: @color transparent transparent @color;
+      }
+    }
+  }
+}
+.arrow-left-middle {
+  .arrow;
+  &::after {
+    top: 50%;
+    left: -7px;
+  }
+}
+.arrow-left-bottom {
+  .arrow;
+  &::after {
+    top: 30px;
+    left: -7px;
+  }
+}
+.arrow-left-top {
+  .arrow;
+  &::after {
+    top: 30px;
+    left: -7px;
+  }
+}
+
+.arrow-right-middle,
+.arrow-right-top,
+.arrow-right-bottom {
+  .for-each(@pair in @arrow-colors) {
+    @key: at(@pair, 1);
+    @color: at(@pair, 2);
+    &.arrow--@{key} {
+      &::after {
+        border-color: transparent @color @color transparent;
+      }
+    }
+  }
+}
+.arrow-right-middle {
+  .arrow;
+  &::after {
+    top: 50%;
+    right: -3px;
+  }
+}
+.arrow-right-bottom {
+  .arrow;
+  &::after {
+    top: 30px;
+    right: -3px;
+  }
+}
+.arrow-right-top {
+  .arrow;
+  &::after {
+    top: 30px;
+    right: -3px;
+  }
+}
+
+.arrow-top-left,
+.arrow-top-middle,
+.arrow-top-right {
+  .for-each(@pair in @arrow-colors) {
+    @key: at(@pair, 1);
+    @color: at(@pair, 2);
+    &.arrow--@{key} {
+      &::after {
+        border-color: @color @color transparent transparent;
+      }
+    }
+  }
+}
+.arrow-top-left {
+  .arrow;
+  &::after {
+    margin-left: -5px;
+    top: 0px;
+    left: 30px;
+  }
+}
+.arrow-top-right {
+  .arrow;
+  &::after {
+    margin-left: -5px;
+    top: 0px;
+    right: 20px;
+  }
+}
+.arrow-top-middle {
+  .arrow;
+  &::after {
+    margin-left: -5px;
+    top: 0px;
+    left: 50%;
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "color-white": "#ffffff",
+  "color-white-dark": "#f5f5f5",
+  "color-white-transparent": "rgba(255, 255, 255, .8)",
+  "color-gray": "#B4C4C7",
+  "color-gray-dark": "#729198",
+  "color-gray-light": "#e5ecee",
+  "color-gray-xlight": "#f7f9f9",
+  "color-navy": "#004859",
+  "color-blue": "#32AAF5",
+  "color-blue-light": "#D0ECFD",
+  "color-blue-dark": "#2090D6",
+  "color-green": "#8BE2BB",
+  "color-green-dark": "#3ECF8E",
+  "color-green-light": "#e3f8ef",
+  "color-red": "#FF6A6A",
+  "color-red-light": "#FF9090",
+  "color-red-dark": "#C93B3B",
+  "color-yellow": "#FFD482",
+  "color-yellow-light": "#FFEFCF",
+  "color-yellow-dark": "#FFB72F"
+}

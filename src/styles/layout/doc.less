@@ -1,0 +1,43 @@
+@import (reference) "../_base/helpers";
+
+/*.....................................
+  DOCUMENT
+.....................................*/
+
+html,
+body {
+  font-family: @font-1;
+  font-size: 14px;
+  line-height: 1.45;
+  -webkit-backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  opacity: 1;
+  &.fadeout {
+    .transition(opacity 200ms ease-out);
+    opacity: 0;
+  }
+}
+
+html.sticky-footer {
+  height: 100%;
+
+  body {
+    height: 100%;
+  }
+  .contain-page {
+    min-height: 100%;
+    margin-bottom: -@footer-height;
+
+    &:after {
+      content: " ";
+      display: block;
+      height: @footer-height;
+    }
+  }
+  footer {
+    height: @footer-height;
+  }
+}

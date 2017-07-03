@@ -1,0 +1,23 @@
+.ratio {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  .ratio-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .for-each(@pair in @ratios) {
+    @a: at(@pair, 1);
+    @b: at(@pair, 2);
+
+    &.ratio--@{a}-@{b}  {
+      padding-bottom: @a / @b * 100%;
+    }
+  }
+}

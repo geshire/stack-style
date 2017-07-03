@@ -1,0 +1,124 @@
+@import (reference) "../_base/helpers";
+
+/*.....................................
+  TYPOGRAPHY
+.....................................*/
+
+/* Links
+.....................................*/
+.link(@color) {
+  &:link,
+  &:visited {
+    color: @color;
+  }
+  &:hover,
+  &:active {
+    color: @color;
+  }
+}
+
+a {
+  .transition(opacity 300ms ease);
+  &:link,
+  &:visited {
+    color: @color-blue;
+    text-decoration: none;
+  }
+  &:hover,
+  &:active {
+    color: @color-blue;
+    opacity: .7;
+    text-decoration: none;
+  }
+}
+
+.word-break {
+  word-break: break-word;
+}
+
+// text base
+.text {
+  color: at(at(@text-colors, 1), 2);
+  font-family: @font-1;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+body {
+  .text;
+}
+
+.for-each(@pair in @text-colors) {
+  @key: at(@pair, 1);
+  @color: at(@pair, 2);
+  .text--@{key} {
+    color: @color !important;
+  }
+  a.text--@{key} {
+    .link(@color);
+  }
+}
+
+// case
+.text--upper {
+  text-transform: uppercase;
+}
+.text--lower {
+  text-transform: lowercase;
+}
+
+// style
+.text--bold {
+  font-weight: 800;
+}
+.text--normal {
+  font-weight: 400 !important;
+}
+.text--underline {
+  text-decoration: underline;
+}
+.text--line {
+  text-decoration: line-through;
+}
+.text--italic {
+  font-style: italic;
+}
+.text--wide {
+  letter-spacing: 1px;
+}
+
+.for-each(@pair in @text-sizes) {
+  @key: at(@pair, 1);
+  @value: at(@text-sizes, @key);
+
+  .@{key} {
+    font-size: slice(@value, 1, 2);
+    font-weight: slice(@value, 2, 3);
+    line-height: slice(@value, 3, 4);
+    &.text--bold {
+      font-weight: slice(@value, 4, 5);
+    }
+  }
+}
+
+.for-each(@pair in @headers) {
+  @key: at(@pair, 1);
+  @value: at(@headers, @key);
+
+  .@{key} {
+    font-family: slice(@value, 1, 2);
+    font-weight: slice(@value, 2, 3);
+    font-size: slice(@value, 3, 4);
+    line-height: slice(@value, 4, 5);
+  }
+}
+
+.for-each(@pair in @lines) {
+  @key: at(@pair, 1);
+  @value: at(@lines, @key);
+
+  .line--@{key} {
+    line-height: @value;
+    height: @value;
+  }
+}

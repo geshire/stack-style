@@ -1,0 +1,19 @@
+{
+  "colors": {
+    "black": "#111111",
+    "white": "#ffffff",
+    "gray": "#B2B2B2",
+    "blue": "#32AAF5",
+    "green": "#3ECF8E",
+    "red": "#FF6A6A"
+  },
+  "sizes": {
+    "xxsmall": "15px",
+    "xsmall": "25px",
+    "small": "35px",
+    "medium": "45px",
+    "large": "55px",
+    "xlarge": "75px"
+  },
+  "list": []
+}

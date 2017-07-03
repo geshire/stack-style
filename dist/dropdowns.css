@@ -1,0 +1,107 @@
+/*.....................................
+  DROPDOWN
+.....................................*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+  /* Dropdown List
+  .....................................*/
+  /* Dropdown Sizes
+  .....................................*/
+  /* Dropdown Positioning
+  .....................................*/
+}
+.dropdown .dropdown-list {
+  padding: 10px 0;
+  background: #ffffff;
+  -webkit-border-radius: 4px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 4px;
+  -moz-background-clip: padding;
+  border-radius: 4px;
+  background-clip: padding-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.dropdown .dropdown-list.is-active {
+  -webkit-animation: dropdownReveal 100ms cubic-bezier(0.79, -0.16, 0.47, 1.16);
+  -moz-animation: dropdownReveal 100ms cubic-bezier(0.79, -0.16, 0.47, 1.16);
+  -o-animation: dropdownReveal 100ms cubic-bezier(0.79, -0.16, 0.47, 1.16);
+  animation: dropdownReveal 100ms cubic-bezier(0.79, -0.16, 0.47, 1.16);
+  display: block;
+}
+.dropdown .dropdown-list.dropdown-items a {
+  display: block;
+  padding: 1px 5px;
+  text-decoration: none;
+  font-family: 'Apercu', sans-serif;
+}
+.dropdown .dropdown-list.dropdown-items a:link,
+.dropdown .dropdown-list.dropdown-items a:visited {
+  background: #ffffff;
+}
+.dropdown.dropdown--xsmall .dropdown-list {
+  width: 76px;
+  margin-left: -38px;
+}
+.dropdown.dropdown--small .dropdown-list {
+  width: 100px;
+  margin-left: -50px;
+}
+.dropdown.dropdown--medium .dropdown-list {
+  width: 150px;
+}
+.dropdown.dropdown--xmedium .dropdown-list {
+  width: 200px;
+}
+.dropdown.dropdown--large .dropdown-list {
+  width: 250px;
+}
+.dropdown.dropdown--xlarge .dropdown-list {
+  width: 300px;
+}
+.dropdown.dropdown--xxlarge .dropdown-list {
+  width: 400px;
+}
+.dropdown.dropdown--fill .dropdown-list {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.dropdown.dropdown--top .dropdown-list {
+  z-index: 2147483647;
+  position: absolute;
+  bottom: 40px;
+  top: auto;
+}
+.dropdown.dropdown--bottom .dropdown-list {
+  z-index: 2147483647;
+  position: absolute;
+  top: 40px;
+  bottom: auto;
+}
+.dropdown.dropdown--fill .dropdown-list li a {
+  padding: 5px 20px;
+}
+@keyframes dropdownReveal {
+  0% {
+    opacity: 0;
+    display: none;
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+    display: block;
+  }
+}

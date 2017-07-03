@@ -1,0 +1,43 @@
+/*.....................................
+  LISTS
+.....................................*/
+ul.list-inline,
+ol.list-inline {
+  list-style: none;
+}
+ul.list-inline li,
+ol.list-inline li {
+  list-style: none;
+  display: inline-block;
+}
+ul.list-inline-float,
+ol.list-inline-float {
+  *zoom: 1;
+}
+ul.list-inline-float li,
+ol.list-inline-float li {
+  display: block;
+  float: left;
+}
+ul.list-inline-float:after,
+ol.list-inline-float:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+ul.list-no-bullets,
+ol.list-no-bullets {
+  list-style: none;
+}
+ul.list-no-bullets li,
+ol.list-no-bullets li {
+  list-style: none;
+}
+ul.list-striped li,
+ol.list-striped li {
+  border: none;
+}
+ul.list-striped li:nth-child(odd),
+ol.list-striped li:nth-child(odd) {
+  background: #f8f9fb;
+}

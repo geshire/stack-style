@@ -1,0 +1,113 @@
+@import (reference) "../_base/helpers";
+
+/*.....................................
+  DROPDOWN
+.....................................*/
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  /* Dropdown List
+  .....................................*/
+  .dropdown-list {
+    &.is-active {
+      .animation(dropdownReveal 100ms cubic-bezier(0.790, -0.160, 0.470, 1.160));
+      display: block;
+    }
+    padding: 10px 0;
+    background: @color-white;
+    .border-radius(4px);
+    .box-sizing(border-box);
+    // .box-shadow(0 0 1px 0 @color-slate);
+
+    &.dropdown-items {
+      a {
+        display: block;
+        padding: 1px 5px;
+        // color: @color-slate-dark;
+        text-decoration: none;
+        font-family: @font-1;
+
+        &:link,
+        &:visited {
+          background: @color-white;
+        }
+        &:hover {
+          // color: @color-navy;
+          // background-color: @color-slate-light;
+        }
+      }
+    }
+  }
+
+  /* Dropdown Sizes
+  .....................................*/
+  &.dropdown--xsmall {
+    .dropdown-list { width: 76px; margin-left: -38px; }
+  }
+  &.dropdown--small {
+    .dropdown-list { width: 100px; margin-left: -50px;
+    }
+  }
+  &.dropdown--medium {
+    .dropdown-list { width: 150px; }
+  }
+  &.dropdown--xmedium {
+    .dropdown-list { width: 200px; }
+  }
+  &.dropdown--large {
+    .dropdown-list { width: 250px; }
+  }
+  &.dropdown--xlarge {
+    .dropdown-list { width: 300px; }
+  }
+  &.dropdown--xxlarge {
+    .dropdown-list { width: 400px; }
+  }
+  &.dropdown--fill {
+    .dropdown-list { width: 100%; .box-sizing(border-box); }
+  }
+
+  /* Dropdown Positioning
+  .....................................*/
+  &.dropdown--top {
+    .dropdown-list {
+      .z-top;
+      position: absolute;
+      bottom: 40px;
+      top: auto;
+    }
+  }
+
+  &.dropdown--bottom {
+    .dropdown-list {
+      .z-top;
+      position: absolute;
+      top: 40px;
+      bottom: auto;
+    }
+  }
+
+  &.dropdown--fill {
+    .dropdown-list {
+      li a {
+        padding: 5px 20px;
+      }
+    }
+  }
+}
+
+
+@keyframes dropdownReveal {
+  0% {
+    opacity: 0;
+    display: none;
+    .transform(scale(.9));
+  }
+  100% {
+    .transform(scale(1));
+    opacity: 1;
+    display: block;
+  }
+}
