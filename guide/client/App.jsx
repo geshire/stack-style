@@ -9,6 +9,7 @@ import rootReducer from "state/rootReducer";
 import initialState from "state/initialState";
 
 import "styles/_base/manifest.less";
+import "guide.less";
 
 /* eslint-disable no-underscore-dangle */
 const composeEnhancers = typeof window !== "undefined" && (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose);

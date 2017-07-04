@@ -6,14 +6,21 @@ import NavChildren from 'layout/NavChildren';
 import settings from "settings.json";
 
 const NavView = ({ guide }) => (
-  <nav id="navigation">
+  <nav
+    className="fixed left top height-100 scrollable-y border-right border--thin"
+    style={{
+      width: "225px",
+      backgroundColor: `${settings.guide.nav.backgroundColor}`,
+      borderColor: `${settings.guide.nav.borderColor}`,
+    }}
+  >
     <h1 className="inline-block padding-top-medium padding-left-large">
       <i className={`${settings.logo.name} symbol--${settings.logo.size}`}>{settings.title}</i>
     </h1>
     <ul>
       {Object.keys(guide).map(key => (
         <li className="padding-horz-large margin-vert-large" key={key}>
-          <h5 className="border-bottom border--thin border--gray-light margin-bottom-small padding-bottom-small">
+          <h5 className="border-bottom border--thin margin-bottom-small padding-bottom-small" style={{ borderColor: `${settings.guide.nav.borderColor}` }}>
             <Link className="text--blue text-3" to={guide[key].to}>
               {guide[key].title}
             </Link>

@@ -18,16 +18,14 @@ class Layout extends Component {
   }
   render() {
     return (
-      <div className="layout contain-page">
+      <div>
         <NavContainer />
-        <section id="stage" className="fill-width">
-          <div id="stage-container">
-            <Route exact path="/layout" component={GuideLayout} />
-            <Route exact path="/fx" component={GuideFx} />
-            <Route exact path="/elements" component={GuideElements} />
-            <Route exact path="/typography" component={GuideTypography} />
-            <Route exact path="/icons" component={GuideIcons} />
-          </div>
+        <section id="stage" className="width-100 border-box" style={{ paddingLeft: "225px" }}>
+          <Route exact path="/layout" component={GuideLayout} />
+          <Route exact path="/fx" component={GuideFx} />
+          <Route exact path="/elements" component={GuideElements} />
+          <Route exact path="/typography" component={GuideTypography} />
+          <Route exact path="/icons" component={GuideIcons} />
         </section>
       </div>
     );

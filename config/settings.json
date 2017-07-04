@@ -4,5 +4,11 @@
   "logo": {
     "name": "symbol-company",
     "size": "small"
+  },
+  "guide": {
+    "nav": {
+      "backgroundColor": "#ffffff",
+      "borderColor": "rgb(242, 242, 242)"
+    }
   }
 }

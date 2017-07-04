@@ -690,6 +690,12 @@ ol.list-striped li:nth-child(odd) {
 .auto {
   margin: auto !important;
 }
+.scrollable-y {
+  overflow-y: scroll;
+}
+.scrollable-x {
+  overflow-x: scroll;
+}
 .z-top {
   z-index: 2147483646;
 }
