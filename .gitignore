@@ -1,5 +1,2 @@
-node_modules
-.env
-src/svg/css
-guide/public
-.DS_Store
+notes.md
+/node_modules
