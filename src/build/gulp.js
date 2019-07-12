@@ -6,8 +6,8 @@ import file from "gulp-file";
 import gulpif from "gulp-if";
 import insert from "gulp-insert";
 import sass from "gulp-sass";
-import createSassConfig from "./src/build/createSassConfig";
-import createSvg from "./src/svg/create";
+import createSassConfig from "./createSassConfig";
+import createSvg from "../svg/create";
 
 export default build = (config, dir, opts) => {
   const options = {

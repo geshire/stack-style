@@ -1,0 +1,427 @@
+
+// fonts
+$skolar-sans: Skolar Sans Latin Compressed, skolar-sans-latin-compressed, sans-serif; 
+$proxima-nova: Proxima Nova, proxima-nova, sans-serif; 
+
+
+// colors
+$white: #ffffff; 
+$charcoal: #5C5C5C; 
+$black: #171717; 
+$gray: #969696; 
+$gray-light: #C3C3C3; 
+$gray-xlight: #EBEBEB; 
+$blue: #627EF4; 
+$blue-dark: #2641B4; 
+$yellow: #FFB948; 
+$green: #31C385; 
+$red: #F24C46; 
+
+
+// body defaults
+$body-font-family: $proxima-nova; 
+$body-font-size: 16px; 
+$body-color: $charcoal; 
+$body-font-weight: 400; 
+$body-link-color: $blue; 
+$body-line-height: 21px; 
+$body-link-hover-color: $blue-dark; 
+$body-link-active-color: $blue-dark; 
+$body-link-visited-color: $blue; 
+$body-link-text-decoration: none; 
+$body-link-text-decoration-hover: underline; 
+
+
+// buttons
+$buttons: (
+  (
+    name: blue,
+    border-radius: 5px,
+    border-color: $blue,
+    border-width: 1px,
+    color: $white,
+    background-color: $blue,
+    font-weight: 500,
+    font-family: $proxima-nova,
+    active-color: $white,
+    active-background-color: $blue-dark,
+    active-border-color: $blue-dark,
+    hover-color: $white,
+    hover-background-color: $blue-dark,
+    hover-border-color: $blue-dark,
+  ),
+  (
+    name: white,
+    border-radius: 5px,
+    border-color: $gray-xlight,
+    border-width: 1px,
+    color: $black,
+    background-color: $white,
+    box-shadow: 0px 0px 5px $gray-xlight,
+    font-weight: 500,
+    font-family: $proxima-nova,
+    active-color: $black,
+    active-background-color: $white,
+    active-border-color: $gray-light,
+    hover-color: $black,
+    hover-background-color: $white,
+    hover-border-color: $gray-light,
+  ),
+  
+);
+
+// borders
+$shadow: 8px 8px 0px 0px rgba(216, 216, 216, 0.3);
+$border-radius-sizes: (
+  (
+    name: default,
+    size: 10px,
+  ),
+  (
+    name: small,
+    size: 5px,
+  ),
+  (
+    name: medium,
+    size: 10px,
+  ),
+  
+);
+$border-colors: (
+  (
+    name: gray,
+    color: $gray,
+  ),
+  (
+    name: gray-light,
+    color: $gray-light,
+  ),
+  (
+    name: gray-xlight,
+    color: #EBEBEB,
+  ),
+  (
+    name: blue,
+    color: $blue,
+  ),
+  
+);
+
+$background-colors: (
+  (
+    name: soapstone,
+    color: #FFFBF7,
+  ),
+  (
+    name: blue,
+    color: $blue,
+  ),
+  (
+    name: white,
+    color: $white,
+  ),
+  (
+    name: gray,
+    color: $gray,
+  ),
+  (
+    name: yellow,
+    color: $yellow,
+  ),
+  (
+    name: gray-light,
+    color: $gray-light,
+  ),
+  (
+    name: gray-xlight,
+    color: $gray-xlight,
+  ),
+  
+);
+
+// spacing
+$spacing-sizes: (
+  (
+    name: reset,
+    size: 0px,
+  ),
+  (
+    name: xxsmall,
+    size: 5px,
+  ),
+  (
+    name: xsmall,
+    size: 10px,
+  ),
+  (
+    name: small,
+    size: 15px,
+  ),
+  (
+    name: medium,
+    size: 20px,
+  ),
+  (
+    name: large,
+    size: 30px,
+  ),
+  (
+    name: xlarge,
+    size: 40px,
+  ),
+  (
+    name: xxlarge,
+    size: 50px,
+  ),
+  
+);
+
+// layout
+$footer-height: 100px;
+$grid-col-sets: 2,3,4,5,16;
+$ratio-sets: (
+  (9, 16),
+  (5, 7),
+);
+
+// typography
+$typography-colors: (
+  (
+    name: white,
+    color: $white,
+  ),
+  (
+    name: charcoal,
+    color: $charcoal,
+  ),
+  (
+    name: black,
+    color: $black,
+  ),
+  (
+    name: gray,
+    color: $gray,
+  ),
+  (
+    name: blue,
+    color: $blue,
+  ),
+  (
+    name: green,
+    color: $green,
+  ),
+  (
+    name: yellow,
+    color: $yellow,
+  ),
+  
+);
+
+$headers: (
+  (
+    font-family: $skolar-sans,
+    font-size: 48px,
+    light-weight: 300,
+    default-weight: 500,
+    bold-weight: 700,
+    line-height: 54px,
+    default-color: $black,
+  ),
+  (
+    font-family: $skolar-sans,
+    font-size: 28px,
+    light-weight: 300,
+    default-weight: 500,
+    bold-weight: 700,
+    line-height: 32px,
+    default-color: $black,
+  ),
+  (
+    font-family: $skolar-sans,
+    font-size: 24px,
+    light-weight: 300,
+    default-weight: 500,
+    bold-weight: 700,
+    line-height: 28px,
+    default-color: $black,
+  ),
+  (
+    font-family: $skolar-sans,
+    font-size: 21px,
+    light-weight: 300,
+    default-weight: 500,
+    bold-weight: 700,
+    line-height: 24px,
+    default-color: $black,
+  ),
+  
+);
+
+$text: (
+  (
+    font-size: 24px,
+    light-weight: 400,
+    bold-weight: 500,
+    line-height: 32px,
+  ),
+  (
+    font-size: 18px,
+    light-weight: 400,
+    bold-weight: 500,
+    line-height: 24px,
+  ),
+  (
+    font-size: 16px,
+    light-weight: 400,
+    bold-weight: 500,
+    line-height: 21px,
+  ),
+  (
+    font-size: 14px,
+    light-weight: 400,
+    bold-weight: 500,
+    line-height: 18px,
+  ),
+  
+);
+
+$line-height-sizes: (
+  (
+    name: xsmall,
+    line-height: 30px,
+  ),
+  (
+    name: small,
+    line-height: 40px,
+  ),
+  (
+    name: medium,
+    line-height: 50px,
+  ),
+  (
+    name: large,
+    line-height: 60px,
+  ),
+  (
+    name: xlarge,
+    line-height: 75px,
+  ),
+  
+);
+
+// lists
+$lists-striped-color: $gray-light;
+
+// icons
+$icons-sizes: (
+  (
+    name: default,
+    size: 35px,
+  ),
+  (
+    name: xxsmall,
+    size: 15px,
+  ),
+  (
+    name: xsmall,
+    size: 25px,
+  ),
+  (
+    name: small,
+    size: 35px,
+  ),
+  (
+    name: medium,
+    size: 45px,
+  ),
+  (
+    name: large,
+    size: 55px,
+  ),
+  (
+    name: xlarge,
+    size: 65px,
+  ),
+  (
+    name: xxlarge,
+    size: 75px,
+  ),
+  
+);
+
+$icons-sizes-by-key: (
+  default: 35px,
+  xxsmall: 15px,
+  xsmall: 25px,
+  small: 35px,
+  medium: 45px,
+  large: 55px,
+  xlarge: 65px,
+  xxlarge: 75px,
+
+);
+
+$icons-colors: (
+  (
+    name: white,
+    hex: #ffffff,
+  ),
+  (
+    name: charcoal,
+    hex: #5C5C5C,
+  ),
+  (
+    name: gray,
+    hex: #969696,
+  ),
+  (
+    name: blue,
+    hex: #627EF4,
+  ),
+  (
+    name: yellow,
+    hex: #FFB948,
+  ),
+  (
+    name: green,
+    hex: #31C385,
+  ),
+  
+);
+
+// forms
+$forms-input-font-size: 16px; 
+$forms-input-background-color: $white; 
+$forms-input-focus-background-color: $white; 
+$forms-input-error-background-color: $white; 
+$forms-input-color: #191919; 
+$forms-input-focus-color: #191919; 
+$forms-input-error-color: $gray; 
+$forms-input-placeholder-color: #3B3B3B; 
+$forms-input-placeholder-focus-color: $gray-light; 
+$forms-input-placeholder-error-color: $red; 
+$forms-input-border-width: 1px; 
+$forms-input-border-color: #EAEAEA; 
+$forms-input-border-focus-color: $blue; 
+$forms-input-border-error-color: $red; 
+
+
+$input-sizes: (
+  (
+    name: default,
+    size: 40px,
+  ),
+  (
+    name: small,
+    size: 30px,
+  ),
+  (
+    name: medium,
+    size: 40px,
+  ),
+  (
+    name: large,
+    size: 60px,
+  ),
+  
+);

@@ -1,0 +1,100 @@
+@import "../config";
+@import "../sizes";
+
+/*.....................................
+  FORMS
+......................................*/
+.form {
+  // fieldsets
+  fieldset {
+    &.disabled label {
+      opacity: 0.5;
+    }
+    label {
+      cursor: default;
+    }
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  input[type="search"],
+  input[type="number"] {
+    height: map-get(nth($input-sizes, 1), size);
+    padding: 0px 12px;
+    @each $media-size in $media-screen-size-keys {
+      @media #{map-get($media-screen-sizes, $media-size)} {
+        @each $input-size in $input-sizes {
+          @if (map-get($input-size, name) == default) {}
+          @else {
+            &.#{$media-size}input--#{map-get($input-size, name)} {
+              height: map-get($input-size, size);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  textarea {
+    padding: 12px;
+  }
+  // input fields
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  input[type="number"],
+  textarea {
+    background-color: $forms-input-background-color;
+    -webkit-appearance: none;
+    font-size: $forms-input-font-size;
+    color: $forms-input-color;
+    line-height: normal;
+
+    border: $forms-input-border-width solid $forms-input-border-color;
+
+    box-sizing: border-box;
+    transition: border .2s ease, color .2s ease;
+    &::placeholder {
+      color: $forms-input-placeholder-color;
+    }
+
+    &[disabled],
+    &.disabled {
+      opacity: 0.5;
+    }
+
+    // has error
+    &.is-error {
+      border: $forms-input-border-width solid $forms-input-border-error-color;
+      // error selected
+      &.selected,
+      &:focus {
+        border: $forms-input-border-width solid $forms-input-border-focus-color;
+      }
+      &::placeholder {
+        color: $forms-input-placeholder-color;
+      }
+    }
+
+    // focus
+    &:focus {
+      &::placeholder {
+        color: $forms-input-placeholder-focus-color;
+      }
+      color: $forms-input-focus-color;
+      border: $forms-input-border-width solid $forms-input-border-focus-color;
+
+      //focus error
+      &.is-error {
+        // focus error selected
+        &.selected {}
+        &::placeholder {
+          color: $forms-input-placeholder-error-color;
+        }
+      }
+    }
+  }
+}

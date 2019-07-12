@@ -1,5 +1,5 @@
 import build from "./build/gulp.js";
 
-module.exports = {
+export default {
   build,
 };

@@ -1,0 +1,16 @@
+// @import (reference) "../_base/helpers";
+//
+// .radio {
+//   input[type="radio"]:checked + label,
+//   input[type="checkbox"]:checked + label {
+//     .for-each(@pair in @buttons) {
+//       @key: at(@pair, 1);
+//       @args: at(@buttons, @key);
+//       &.btn-@{key} {
+//         color: slice(@args, 15, 16);
+//         background-color: slice(@args, 16, 17);
+//         border-color: slice(@args, 17, 18);
+//       }
+//     }
+//   }
+// }

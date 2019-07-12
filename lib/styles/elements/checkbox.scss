@@ -1,0 +1,171 @@
+// @import (reference) "../_base/helpers";
+//
+// /*.....................................
+//   CHECKBOXES
+// .....................................*/
+// .checkbox {
+//   display: inline-block;
+//   line-height: 0;
+//   vertical-align: middle;
+//   width: 100%;
+//   box-sizing: border-box;
+//
+//   label {
+//     .checkbox--icon {
+//       &.checkbox--icon-solid {
+//         padding: 2px;
+//         border-radius: at(@checkboxes, solid-radius);
+//         background: at(@checkboxes, solid-background-color);
+//         border: 1px solid at(@checkboxes, solid-border-color);
+//       }
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       display: inline-block;
+//       width: 15px;
+//       height: 15px;
+//       border: 1px solid at(at(@border-colors, 1), 2);
+//       background: @color-white;
+//       .transition(all 300ms ease);
+//     }
+//     .checkbox--label {
+//       line-height: 18px;
+//       margin-left: 24px;
+//       &.checkbox--label-solid {
+//         line-height: 24px;
+//         margin-left: 28px;
+//       }
+//     }
+//
+//     &:hover {
+//       .checkbox--icon {
+//         border: 1px solid at(at(@border-colors, 1), 2);
+//         background: @color-white;
+//         cursor: pointer;
+//       }
+//     }
+//   }
+//
+//   .user-select(none);
+//
+//   input[type=checkbox] {
+//     display: none;
+//
+//     & + label {
+//       .icon-check {
+//         display: none;
+//       }
+//     }
+//
+//     &:checked + label {
+//       background-color: @color-white;
+//       .checkbox--icon-solid {
+//         background: at(@checkboxes, solid-background-checked-color);
+//         border: 1px solid at(@checkboxes, solid-background-checked-color);
+//       }
+//       .checkbox--icon-solid .icon {
+//         top: -6px;
+//         left: -5px;
+//       }
+//       .icon {
+//         position: absolute;
+//         top: -8px;
+//         left: -6px;
+//         background-size: contain;
+//         height: 30px;
+//         width: 30px;
+//         display: block;
+//       }
+//     }
+//   }
+// }
+//
+// .checkbox--toggle {
+//   display: inline-block;
+//   input:checked + label {
+//     .checkbox--circle {
+//       background-color: #5074E9;
+//       left: 33px;
+//     }
+//     .checkbox--label {
+//       color: #5074E9;
+//       left: 9px;
+//     }
+//   }
+//   label {
+//     display: inline-block;
+//     width: 65px;
+//     border: 1px solid at(at(@border-colors, 2), 2);
+//     height: 35px;
+//     border-radius: 30px;
+//     position: relative;
+//     .checkbox--circle {
+//       .transition(left 300 ease);
+//       width: 25px;
+//       height: 25px;
+//       border-radius: 50%;
+//       background-color: at(at(@border-colors, 2), 2);
+//       display: block;
+//       position: absolute;
+//       display: block;
+//       top: 5px;
+//       left: 7px;
+//     }
+//     .checkbox--label {
+//       font-size: 12px;
+//       position: absolute;
+//       display: block;
+//       top: 9px;
+//       right: 9px;
+//       color: at(at(@border-colors, 2), 2);
+//     }
+//     &:hover {
+//       cursor: pointer;
+//     }
+//   }
+//
+//   .user-select(none);
+//
+//   input[type=checkbox] {
+//     display: none;
+//
+//     & + label {
+//       .disc {
+//         border: 1px solid at(at(@border-colors, 1), 2);
+//         background: at(at(@border-colors, 1), 2);
+//         left: 4px;
+//       }
+//     }
+//   }
+//
+//   .disc {
+//     .transition(left 200ms ease);
+//     width: 13px;
+//     height: 13px;
+//     display: block;
+//     border-radius: 50%;
+//     position: absolute;
+//     top: 2px;
+//   }
+// }
+//
+// .checkbox--large {
+//   height: 29px;
+//   label {
+//     width: 50px;
+//     height: 27px;
+//     border-radius: 50px;
+//   }
+//   input[type=checkbox] {
+//     &:checked + label {
+//       .disc {
+//         left: 25px;
+//       }
+//     }
+//   }
+//   .disc {
+//     width: 19px;
+//     height: 19px;
+//     top: 3px;
+//   }
+// }

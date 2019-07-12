@@ -1,0 +1,29 @@
+.upper {
+  text-transform: uppercase;
+}
+.lower {
+  text-transform: lowercase;
+}
+.underline,
+.hover-underline:hover {
+  text-decoration: underline;
+}
+.no-underline,
+.hover-no-underline:hover {
+  text-decoration: none !important;
+}
+.line-through {
+  text-decoration: line-through;
+}
+.italic {
+  font-style: italic;
+}
+.letter-spacing-large {
+  letter-spacing: 1px;
+}
+.letter-spacing-xlarge {
+  letter-spacing: 2px;
+}
+.word-break {
+  word-break: break-word;
+}
