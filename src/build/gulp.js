@@ -1,4 +1,4 @@
-import gulp, { series } from "gulp";
+import gulp from "gulp";
 import clean from "gulp-clean";
 import flatten from "gulp-flatten";
 import file from "gulp-file";

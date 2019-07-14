@@ -4,20 +4,16 @@
 /*.....................................
   GRID
 .....................................*/
-
-.group,
 .row {
-  &:before,
-  &:after {
-    content: " ";
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
-
-.col,
+.col {
+  box-sizing: border-box;
+  justify-content: center;
+  flex-direction: column;
+}
 .pull {
   float: left;
   box-sizing: border-box;
@@ -40,14 +36,13 @@
       float: none;
     }
     .#{$media-size}width-100 {
-      width: 100%;
-      min-height: 1px;
+      flex-basis: 100%;
     }
 
     @each $columns in $grid-col-sets {
       @for $i from 1 through $columns {
         .#{$media-size}width-#{$i}-#{$columns} {
-          width: $i * 100% / $columns;
+          flex-basis: $i * 100% / $columns;
           min-height: 1px;
         }
       }
