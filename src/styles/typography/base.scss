@@ -20,11 +20,21 @@ body {
   font-size: map-get($text-item, font-size);
   font-weight: $body-font-weight;
   line-height: map-get($text-item, line-height);
-  &.weight-light {
+  &.weight-light,
+  .weight-light {
     font-weight: map-get($text-item, light-weight);
   }
-  &.weight-bold {
+  &.weight-semi,
+  .weight-semi {
+    font-weight: map-get($text-item, semi-weight);
+  }
+  &.weight-bold,
+  .weight-bold {
     font-weight: map-get($text-item, bold-weight);
+  }
+  &.line-tight,
+  .line-tight {
+    line-height: map-get($text-item, line-tight);
   }
 }
 
@@ -34,10 +44,16 @@ body {
   font-size: map-get($header-item, font-size);
   font-weight: map-get($header-item, default-weight);
   line-height: map-get($header-item, line-height);
-  &.weight-light {
+  &.weight-light,
+  .weight-light {
     font-weight: map-get($header-item, light-weight);
   }
-  &.weight-bold {
+  &.weight-semi,
+  .weight-semi {
+    font-weight: map-get($header-item, semi-weight);
+  }
+  &.weight-bold,
+  .weight-bold {
     font-weight: map-get($header-item, bold-weight);
   }
 }
@@ -53,11 +69,6 @@ body {
     @for $i from 1 through length($headers) {
       .#{$media-size}head-#{$i} {
         @include header(nth($headers, $i));
-      }
-    }
-    @each $line-height in $line-height-sizes {
-      .#{$media-size}line-#{map-get($line-height, name)} {
-        line-height: map-get($line-height, line-height);
       }
     }
   }

@@ -1,21 +1,36 @@
 
 // fonts
-$skolar-sans: Skolar Sans Latin Compressed, skolar-sans-latin-compressed, sans-serif; 
-$proxima-nova: Proxima Nova, proxima-nova, sans-serif; 
+$sourcesanspro: 'Source Sans Pro', sans-serif; 
 
 
 // colors
-$white: #ffffff; 
-$charcoal: #5C5C5C; 
-$black: #171717; 
-$gray: #969696; 
-$gray-light: #C3C3C3; 
-$gray-xlight: #EBEBEB; 
-$blue: #627EF4; 
-$blue-dark: #2641B4; 
-$yellow: #FFB948; 
-$green: #31C385; 
-$red: #F24C46; 
+$color-white: ffffff; 
+$color-charcoal: 3B3B3B; 
+$color-black: 000000; 
+$color-gray-light: F2F2F2; 
+$color-gray-mid: E2E2E2; 
+$color-gray-dark: 989898; 
+$color-blue-light: D0ECFD; 
+$color-blue-mid: 5074E9; 
+$color-blue-dark: 1639A8; 
+$color-blue-bright: 0D4DF1; 
+$color-yellow-light: FFEFCF; 
+$color-yellow-mid: FFCA65; 
+$color-yellow-dark: FFB72F; 
+$color-green-light: E3F8EF; 
+$color-green-mid: 5BD8A0; 
+$color-green-dark: 27B474; 
+$color-teal-light: ADEBEE; 
+$color-teal-mid: 25BBC1; 
+$color-teal-dark: 198D92; 
+$color-violet-light: FADEFF; 
+$color-violet-mid: 9C27B0; 
+$color-violet-dark: 57157E; 
+$color-red-light: FFE5E5; 
+$color-red-mid: FF6A6A; 
+$color-red-dark: C93B3B; 
+$color-peach-light: FFD7CB; 
+$color-peach-mid: FF8E6C; 
 
 
 // body defaults
@@ -49,23 +64,6 @@ $buttons: (
     hover-color: $white,
     hover-background-color: $blue-dark,
     hover-border-color: $blue-dark,
-  ),
-  (
-    name: white,
-    border-radius: 5px,
-    border-color: $gray-xlight,
-    border-width: 1px,
-    color: $black,
-    background-color: $white,
-    box-shadow: 0px 0px 5px $gray-xlight,
-    font-weight: 500,
-    font-family: $proxima-nova,
-    active-color: $black,
-    active-background-color: $white,
-    active-border-color: $gray-light,
-    hover-color: $black,
-    hover-background-color: $white,
-    hover-border-color: $gray-light,
   ),
   
 );

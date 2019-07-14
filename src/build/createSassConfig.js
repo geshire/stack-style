@@ -66,7 +66,7 @@ export default (config) => {
 
   /* typography
   .......................................*/
-  ["colors", "headers", "text", "lineHeightSizes"].forEach(name => {
+  ["colors", "headers", "text"].forEach(name => {
     config.typography[name].forEach((item) => {
       props.typography[name] = `${props.typography[name] || ""}${arrayItemTemplate(item)}`;
     });
@@ -90,7 +90,7 @@ export default (config) => {
   Object.keys(config.forms.inputStyles).map((key) => {
     props.forms.inputStyles = `${props.forms.inputStyles || ""}$forms-input-${formatKey(key)}: ${config.forms.inputStyles[key]}; \n`
   });
-  
+
   config.forms.inputSizes.forEach((item) => {
     props.forms.inputSizes = `${props.forms.inputSizes || ""}${arrayItemTemplate(item)}`;
   });

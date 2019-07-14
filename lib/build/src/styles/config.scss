@@ -1,48 +1,48 @@
 
 // fonts
-$source-sans-pro: 'Source Sans Pro', sans-serif; 
+$sourcesanspro: 'Source Sans Pro', sans-serif; 
 
 
 // colors
-$white: #ffffff; 
-$charcoal: #3B3B3B; 
-$black: #000000; 
-$gray-light: #F2F2F2; 
-$gray-mid: #E2E2E2; 
-$gray-dark: #989898; 
-$blue-light: #D0ECFD; 
-$blue-mid: #5074E9; 
-$blue-dark: #1639A8; 
-$blue-bright: #0D4DF1; 
-$yellow-light: #FFEFCF; 
-$yellow-mid: #FFCA65; 
-$yellow-dark: #FFB72F; 
-$green-light: #E3F8EF; 
-$green-mid: #5BD8A0; 
-$green-dark: #27B474; 
-$teal-light: #ADEBEE; 
-$teal-mid: #25BBC1; 
-$teal-dark: #198D92; 
-$violet-light: #FADEFF; 
-$violet-mid: #9C27B0; 
-$violet-dark: #57157E; 
-$red-light: #FFE5E5; 
-$red-mid: #FF6A6A; 
-$red-dark: #C93B3B; 
-$peach-light: #FFD7CB; 
-$peach-mid: #FF8E6C; 
+$color-white: ffffff; 
+$color-charcoal: 3B3B3B; 
+$color-black: 000000; 
+$color-gray-light: F2F2F2; 
+$color-gray-mid: E2E2E2; 
+$color-gray-dark: 989898; 
+$color-blue-light: D0ECFD; 
+$color-blue-mid: 5074E9; 
+$color-blue-dark: 1639A8; 
+$color-blue-bright: 0D4DF1; 
+$color-yellow-light: FFEFCF; 
+$color-yellow-mid: FFCA65; 
+$color-yellow-dark: FFB72F; 
+$color-green-light: E3F8EF; 
+$color-green-mid: 5BD8A0; 
+$color-green-dark: 27B474; 
+$color-teal-light: ADEBEE; 
+$color-teal-mid: 25BBC1; 
+$color-teal-dark: 198D92; 
+$color-violet-light: FADEFF; 
+$color-violet-mid: 9C27B0; 
+$color-violet-dark: 57157E; 
+$color-red-light: FFE5E5; 
+$color-red-mid: FF6A6A; 
+$color-red-dark: C93B3B; 
+$color-peach-light: FFD7CB; 
+$color-peach-mid: FF8E6C; 
 
 
 // body defaults
-$body-font-family: $source-sans-pro; 
+$body-font-family: $proxima-nova; 
 $body-font-size: 16px; 
 $body-color: $charcoal; 
 $body-font-weight: 400; 
-$body-link-color: $blue-mid; 
-$body-line-height: 140%; 
+$body-link-color: $blue; 
+$body-line-height: 21px; 
 $body-link-hover-color: $blue-dark; 
 $body-link-active-color: $blue-dark; 
-$body-link-visited-color: $blue-mid; 
+$body-link-visited-color: $blue; 
 $body-link-text-decoration: none; 
 $body-link-text-decoration-hover: underline; 
 
@@ -51,22 +51,19 @@ $body-link-text-decoration-hover: underline;
 $buttons: (
   (
     name: blue,
-    border-radius: 7px,
-    border-color: $blue-bright,
+    border-radius: 5px,
+    border-color: $blue,
     border-width: 1px,
     color: $white,
-    background-color: $blue-bright,
-    font-weight: 700,
-    font-family: $source-sans-pro,
+    background-color: $blue,
+    font-weight: 500,
+    font-family: $proxima-nova,
     active-color: $white,
     active-background-color: $blue-dark,
     active-border-color: $blue-dark,
     hover-color: $white,
     hover-background-color: $blue-dark,
     hover-border-color: $blue-dark,
-    selected-text-color: $white,
-    selected-background-color: $blue-dark,
-    selected-border-color: 4blue-dark,
   ),
   
 );
@@ -90,24 +87,20 @@ $border-radius-sizes: (
 );
 $border-colors: (
   (
-    name: red-light,
-    color: $red-light,
+    name: gray,
+    color: $gray,
   ),
   (
     name: gray-light,
     color: $gray-light,
   ),
   (
-    name: gray-mid,
-    color: $gray-mid,
+    name: gray-xlight,
+    color: #EBEBEB,
   ),
   (
-    name: gray-dark,
-    color: $gray-dark,
-  ),
-  (
-    name: blue-mid,
-    color: $blue-mid,
+    name: blue,
+    color: $blue,
   ),
   
 );
@@ -118,28 +111,28 @@ $background-colors: (
     color: #FFFBF7,
   ),
   (
-    name: blue-mid,
-    color: $blue-mid,
+    name: blue,
+    color: $blue,
   ),
   (
     name: white,
     color: $white,
   ),
   (
-    name: gray-mid,
-    color: $gray-mid,
+    name: gray,
+    color: $gray,
   ),
   (
-    name: yellow-mid,
-    color: $yellow-mid,
-  ),
-  (
-    name: gray-mid,
-    color: $gray-mid,
+    name: yellow,
+    color: $yellow,
   ),
   (
     name: gray-light,
     color: $gray-light,
+  ),
+  (
+    name: gray-xlight,
+    color: $gray-xlight,
   ),
   
 );
@@ -204,53 +197,59 @@ $typography-colors: (
     color: $black,
   ),
   (
-    name: gray-mid,
-    color: $gray-mid,
+    name: gray,
+    color: $gray,
   ),
   (
-    name: blue-mid,
-    color: $blue-mid,
+    name: blue,
+    color: $blue,
   ),
   (
-    name: green-mid,
-    color: $green-mid,
+    name: green,
+    color: $green,
   ),
   (
-    name: yellow-mid,
-    color: $yellow-mid,
+    name: yellow,
+    color: $yellow,
   ),
   
 );
 
 $headers: (
   (
-    font-family: $source-sans-pro,
-    font-size: 40px,
-    light-weight: 400,
-    default-weight: 700,
-    semi-weight: 600,
+    font-family: $skolar-sans,
+    font-size: 48px,
+    light-weight: 300,
+    default-weight: 500,
     bold-weight: 700,
-    line-height: 103%,
+    line-height: 54px,
     default-color: $black,
   ),
   (
-    font-family: $source-sans-pro,
+    font-family: $skolar-sans,
     font-size: 28px,
-    light-weight: 400,
-    default-weight: 700,
-    semi-weight: 600,
+    light-weight: 300,
+    default-weight: 500,
     bold-weight: 700,
-    line-height: 105%,
+    line-height: 32px,
     default-color: $black,
   ),
   (
-    font-family: $source-sans-pro,
-    font-size: 21px,
-    light-weight: 400,
-    default-weight: 700,
-    semi-weight: 600,
+    font-family: $skolar-sans,
+    font-size: 24px,
+    light-weight: 300,
+    default-weight: 500,
     bold-weight: 700,
-    line-height: 105%,
+    line-height: 28px,
+    default-color: $black,
+  ),
+  (
+    font-family: $skolar-sans,
+    font-size: 21px,
+    light-weight: 300,
+    default-weight: 500,
+    bold-weight: 700,
+    line-height: 24px,
     default-color: $black,
   ),
   
@@ -258,42 +257,54 @@ $headers: (
 
 $text: (
   (
+    font-size: 24px,
+    light-weight: 400,
+    bold-weight: 500,
+    line-height: 32px,
+  ),
+  (
     font-size: 18px,
-    line-height: 140%,
-    line-tight: 125%,
-    default-weight: 400,
-    semi-weight: 600,
-    bold-weight: 700,
+    light-weight: 400,
+    bold-weight: 500,
+    line-height: 24px,
   ),
   (
     font-size: 16px,
-    line-height: 140%,
-    line-tight: 125%,
-    default-weight: 400,
-    semi-weight: 600,
-    bold-weight: 700,
+    light-weight: 400,
+    bold-weight: 500,
+    line-height: 21px,
   ),
   (
     font-size: 14px,
-    line-height: 140%,
-    line-tight: 115%,
-    default-weight: 400,
-    semi-weight: 600,
-    bold-weight: 700,
-  ),
-  (
-    font-size: 12px,
-    line-height: 140%,
-    line-tight: 115%,
-    default-weight: 400,
-    semi-weight: 600,
-    bold-weight: 700,
+    light-weight: 400,
+    bold-weight: 500,
+    line-height: 18px,
   ),
   
 );
 
 $line-height-sizes: (
-  undefined
+  (
+    name: xsmall,
+    line-height: 30px,
+  ),
+  (
+    name: small,
+    line-height: 40px,
+  ),
+  (
+    name: medium,
+    line-height: 50px,
+  ),
+  (
+    name: large,
+    line-height: 60px,
+  ),
+  (
+    name: xlarge,
+    line-height: 75px,
+  ),
+  
 );
 
 // lists
@@ -351,27 +362,27 @@ $icons-sizes-by-key: (
 $icons-colors: (
   (
     name: white,
-    hex: $white,
+    hex: #ffffff,
   ),
   (
     name: charcoal,
-    hex: $charcoal,
+    hex: #5C5C5C,
   ),
   (
-    name: gray-mid,
-    hex: $gray-mid,
+    name: gray,
+    hex: #969696,
   ),
   (
-    name: blue-mid,
-    hex: $blue-mid,
+    name: blue,
+    hex: #627EF4,
   ),
   (
-    name: yellow-mid,
-    hex: $yellow-mid,
+    name: yellow,
+    hex: #FFB948,
   ),
   (
-    name: green-mid,
-    hex: $green-mid,
+    name: green,
+    hex: #31C385,
   ),
   
 );
@@ -381,16 +392,16 @@ $forms-input-font-size: 16px;
 $forms-input-background-color: $white; 
 $forms-input-focus-background-color: $white; 
 $forms-input-error-background-color: $white; 
-$forms-input-color: $charcoal; 
-$forms-input-focus-color: $black; 
-$forms-input-error-color: $charcoal; 
-$forms-input-placeholder-color: $gray-mid; 
-$forms-input-placeholder-focus-color: $gray-dark; 
-$forms-input-placeholder-error-color: $red-mid; 
+$forms-input-color: #191919; 
+$forms-input-focus-color: #191919; 
+$forms-input-error-color: $gray; 
+$forms-input-placeholder-color: #3B3B3B; 
+$forms-input-placeholder-focus-color: $gray-light; 
+$forms-input-placeholder-error-color: $red; 
 $forms-input-border-width: 1px; 
-$forms-input-border-color: $gray-mid; 
-$forms-input-border-focus-color: $blue-mid; 
-$forms-input-border-error-color: $red-mid; 
+$forms-input-border-color: #EAEAEA; 
+$forms-input-border-focus-color: $blue; 
+$forms-input-border-error-color: $red; 
 
 
 $input-sizes: (
