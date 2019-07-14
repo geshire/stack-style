@@ -9,18 +9,19 @@
 @mixin btn() {
   // display
   display: inline-block;
-  padding: 0px 15px;
+  padding: 0px $button-default-size-horz-padding;
   box-sizing: border-box;
 
   // typography
   font-family: $body-font-family;
-  font-size: 16px;
+  font-size: $button-default-size-font-size;
   text-align: center;
-  line-height: 40px;
-  height: 40px;
+  line-height: $button-default-size-height;
+  height: $button-default-size-height;
 
   background-color: transparent;
   border-color: transparent;
+  transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
 
   // states
   &:link,
@@ -69,7 +70,7 @@
       margin: -8px 0 0 -8px;
     }
   }
-  &.btn--borderless {
+  &.btn-borderless {
     border-width: 0px !important;
   }
 }
@@ -168,46 +169,22 @@
   }
 }
 
-@each $button in $buttons {
+@each $button in $button-styles {
   .btn-#{map-get($button, name)} {
     @include btn();
     @include btn-colors($button);
   }
 }
 
-
 @each $media-size in $media-screen-size-keys {
   @media #{map-get($media-screen-sizes, $media-size)} {
-    // btn sizes
-    .#{$media-size}btn--xxsmall {
-      padding: 0 10px;
-      font-size: 14px;
-      height: 25px;
-      line-height: 25px;
-    }
-    .#{$media-size}btn--xsmall {
-      padding: 0 10px;
-      font-size: 14px;
-      height: 35px;
-      line-height: 35px;
-    }
-    .#{$media-size}btn--small {
-      padding: 0 10px;
-      font-size: 14px;
-      height: 35px;
-      line-height: 35px;
-    }
-    .#{$media-size}btn--medium {
-      padding: 0 15px;
-      font-size: 16px;
-      height: 40px;
-      line-height: 40px;
-    }
-    .#{$media-size}btn--large {
-      padding: 0 25px;
-      font-size: 18px;
-      height: 50px;
-      line-height: 50px;
+    @each $button in $button-sizes {
+      .#{$media-size}btn-#{map-get($button, name)} {
+        padding: 0 map-get($button, horz-padding);
+        font-size: map-get($button, font-size);
+        height: map-get($button, height);
+        line-height: map-get($button, height);
+      }
     }
   }
 }
@@ -219,7 +196,7 @@
   &.btn-group--center,
   &.btn-group--left,
   &.btn-group--right {
-    @each $button in $buttons {
+    @each $button in $button-styles {
       .btn-#{map-get($button, name)} {
         display: inline-block;
         float: none;
@@ -246,7 +223,7 @@
     display: block;
   }
 
-  @each $button in $buttons {
+  @each $button in $button-styles {
     .btn-#{map-get($button, name)} {
       display: block;
       float: left;

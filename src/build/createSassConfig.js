@@ -44,8 +44,14 @@ export default (config) => {
 
   /* buttons
   .......................................*/
-  config.buttons.forEach((button) => {
-    props.buttons = `${props.buttons || ""}${arrayItemTemplate(button)}`;
+  config.buttons.styles.forEach((button) => {
+    props.buttonStyles = `${props.buttonStyles || ""}${arrayItemTemplate(button)}`;
+  });
+  config.buttons.sizes.forEach((button) => {
+    props.buttonSizes = `${props.buttonSizes || ""}${arrayItemTemplate(button)}`;
+  });
+  Object.keys(config.buttons.defaultSize).map((key) => {
+    props.buttonDefaultSize = `${props.buttonDefaultSize || ""}$button-default-size-${formatKey(key)}: ${config.buttons.defaultSize[key]}; \n`
   });
 
   /* fx

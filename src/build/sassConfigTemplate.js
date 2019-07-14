@@ -11,9 +11,13 @@ ${props.colors}
 ${props.body}
 
 // buttons
-$buttons: (
-  ${props.buttons}
+$button-styles: (
+  ${props.buttonStyles}
 );
+$button-sizes: (
+  ${props.buttonSizes}
+);
+${props.buttonDefaultSize}
 
 // borders
 $shadow: ${config.fx.borderShadow};
@@ -24,6 +28,7 @@ $border-colors: (
   ${props.fx.borderColors}
 );
 
+// background
 $background-colors: (
   ${props.fx.backgroundColors}
 );

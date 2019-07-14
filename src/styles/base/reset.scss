@@ -37,7 +37,6 @@
  */
 
 html {
-  line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 
@@ -154,7 +153,6 @@ select,
 textarea {
   font-family: inherit; /* 1 */
   font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
   margin: 0; /* 2 */
 }
 
@@ -263,17 +261,6 @@ textarea {
 }
 
 /**
- * 1. Add the correct box sizing in IE 10.
- * 2. Remove the padding in IE 10.
- */
-
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
-}
-
-/**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
 
@@ -327,114 +314,4 @@ details {
 
 summary {
   display: list-item;
-}
-
-/* Misc
-   ========================================================================== */
-
-/**
- * Add the correct display in IE 10+.
- */
-
-template {
-  display: none;
-}
-
-/**
- * Add the correct display in IE 10.
- */
-
-[hidden] {
-  display: none;
-}
-
-
-
-
-
-
-
-
-
-
-// button {
-//   background: none repeat scroll 0 0 transparent;
-//   border: medium none;
-//   border-spacing: 0;
-//   color: at(at(@text-colors, 1), 2);
-//   font-family: @font-1;
-//   list-style: none outside none;
-//   margin: 0;
-//   padding: 0;
-//   text-align: left;
-//   text-decoration: none;
-//   text-indent: 0;
-// }
-
-// button,
-// input[type="button"],
-// input[type="reset"],
-// input[type="submit"] {
-// cursor: pointer;
-// *overflow: visible;
-// }
-// button[disabled],
-// input[disabled] {
-// cursor: default;
-// }
-// input[type="checkbox"],
-// input[type="radio"] {
-// box-sizing: border-box;
-// -moz-box-sizing:border-box;
-// padding: 0;
-// *height: 13px;
-// *width: 13px;
-// }
-//
-// button::-moz-focus-inner,
-// input::-moz-focus-inner {
-//   border: 0;
-//   padding: 0;
-// }
-// textarea {
-//   overflow: auto;
-//   vertical-align: top;
-// }
-// table {
-//   border-collapse: collapse;
-//   border-spacing: 0;
-// }
-// textarea {
-//   overflow: auto;
-// }
-// input, select {
-//   vertical-align: middle;
-// }
-// input:required,
-// input:invalid {
-//   box-shadow:none;
-// }
-// body {
-//   -webkit-backface-visibility: hidden;
-//   -moz-osx-font-smoothing: grayscale;
-// }
-//
-// html {
-// -webkit-text-size-adjust: 100%;
-// -ms-text-size-adjust: 100%;
-// }
-// input[type="search"],
-// input[type="button"],
-// input[type="reset"],
-// input[type="submit"],
-// input[type="search"] {
-// -webkit-appearance: none;
-//   box-sizing: content-box;
-// }
-
-@each $button in $buttons {
-  .btn.btn-#{map-get($button, name)} {
-    background-color: #{map-get($button, background-color)};
-    color: #{map-get($button, color)};
-  }
 }

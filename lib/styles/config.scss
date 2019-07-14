@@ -11,8 +11,9 @@ $gray-light: #F2F2F2;
 $gray-mid: #E2E2E2; 
 $gray-dark: #989898; 
 $blue-light: #D0ECFD; 
-$blue-mid: #5074E9; 
-$blue-dark: #1639A8; 
+$blue-mid: #244DCB; 
+$blue-dark: #1235A1; 
+$blue-black: #0D2470; 
 $blue-bright: #0D4DF1; 
 $yellow-light: #FFEFCF; 
 $yellow-mid: #FFCA65; 
@@ -31,6 +32,7 @@ $red-mid: #FF6A6A;
 $red-dark: #C93B3B; 
 $peach-light: #FFD7CB; 
 $peach-mid: #FF8E6C; 
+$navy: #FF8E6C; 
 
 
 // body defaults
@@ -38,17 +40,17 @@ $body-font-family: $source-sans-pro;
 $body-font-size: 16px; 
 $body-color: $charcoal; 
 $body-font-weight: 400; 
-$body-link-color: $blue-mid; 
+$body-link-color: $blue-dark; 
 $body-line-height: 140%; 
-$body-link-hover-color: $blue-dark; 
-$body-link-active-color: $blue-dark; 
-$body-link-visited-color: $blue-mid; 
+$body-link-hover-color: $blue-black; 
+$body-link-active-color: $blue-black; 
+$body-link-visited-color: $blue-black; 
 $body-link-text-decoration: none; 
 $body-link-text-decoration-hover: underline; 
 
 
 // buttons
-$buttons: (
+$button-styles: (
   (
     name: blue,
     border-radius: 7px,
@@ -56,7 +58,7 @@ $buttons: (
     border-width: 1px,
     color: $white,
     background-color: $blue-bright,
-    font-weight: 700,
+    font-weight: 600,
     font-family: $source-sans-pro,
     active-color: $white,
     active-background-color: $blue-dark,
@@ -66,10 +68,111 @@ $buttons: (
     hover-border-color: $blue-dark,
     selected-text-color: $white,
     selected-background-color: $blue-dark,
-    selected-border-color: 4blue-dark,
+    selected-border-color: $blue-dark,
+  ),
+  (
+    name: blue-outline,
+    border-radius: 7px,
+    border-color: $blue-bright,
+    border-width: 1px,
+    color: $blue-bright,
+    background-color: $white,
+    font-weight: 600,
+    font-family: $source-sans-pro,
+    active-color: $blue-dark,
+    active-background-color: $white,
+    active-border-color: $blue-dark,
+    hover-color: $blue-dark,
+    hover-background-color: $white,
+    hover-border-color: $blue-dark,
+    selected-text-color: $blue-dark,
+    selected-background-color: $blue-dark,
+    selected-border-color: $blue-dark,
+  ),
+  (
+    name: green,
+    border-radius: 7px,
+    border-color: $green-mid,
+    border-width: 1px,
+    color: $white,
+    background-color: $green-mid,
+    font-weight: 600,
+    font-family: $source-sans-pro,
+    active-color: $white,
+    active-background-color: $green-dark,
+    active-border-color: $green-dark,
+    hover-color: $white,
+    hover-background-color: $green-dark,
+    hover-border-color: $green-dark,
+    selected-text-color: $white,
+    selected-background-color: $green-dark,
+    selected-border-color: $green-dark,
+  ),
+  (
+    name: white,
+    border-radius: 7px,
+    border-color: $gray-mid,
+    border-width: 1px,
+    color: $charcoal,
+    background-color: $white,
+    font-weight: 600,
+    font-family: $source-sans-pro,
+    active-color: $black,
+    active-background-color: $white,
+    active-border-color: $gray-dark,
+    hover-color: $black,
+    hover-background-color: $white,
+    hover-border-color: $gray-dark,
+    selected-text-color: $black,
+    selected-background-color: $white,
+    selected-border-color: $gray-dark,
+  ),
+  (
+    name: navy,
+    border-radius: 7px,
+    border-color: $blue-dark,
+    border-width: 1px,
+    color: $white,
+    background-color: $blue-dark,
+    font-weight: 600,
+    font-family: $source-sans-pro,
+    active-color: $white,
+    active-background-color: $blue-black,
+    active-border-color: $blue-black,
+    hover-color: $white,
+    hover-background-color: $blue-black,
+    hover-border-color: $blue-black,
+    selected-text-color: $white,
+    selected-background-color: $blue-black,
+    selected-border-color: $blue-black,
   ),
   
 );
+$button-sizes: (
+  (
+    name: small,
+    horz-padding: 10px,
+    font-size: 14px,
+    height: 30px,
+  ),
+  (
+    name: medium,
+    horz-padding: 15px,
+    font-size: 16px,
+    height: 35px,
+  ),
+  (
+    name: large,
+    horz-padding: 20px,
+    font-size: 18px,
+    height: 45px,
+  ),
+  
+);
+$button-default-size-horz-padding: 15px; 
+$button-default-size-font-size: 16px; 
+$button-default-size-height: 35px; 
+
 
 // borders
 $shadow: 8px 8px 0px 0px rgba(216, 216, 216, 0.3);
@@ -112,34 +215,55 @@ $border-colors: (
   
 );
 
+// background
 $background-colors: (
   (
-    name: soapstone,
-    color: #FFFBF7,
+    name: blue-light,
+    color: $blue-light,
   ),
   (
     name: blue-mid,
     color: $blue-mid,
   ),
   (
+    name: green-light,
+    color: $green-light,
+  ),
+  (
+    name: green-mid,
+    color: $green-mid,
+  ),
+  (
+    name: red-light,
+    color: $red-light,
+  ),
+  (
+    name: red-mid,
+    color: $red-mid,
+  ),
+  (
     name: white,
     color: $white,
   ),
   (
-    name: gray-mid,
-    color: $gray-mid,
+    name: yellow-light,
+    color: $yellow-light,
   ),
   (
     name: yellow-mid,
     color: $yellow-mid,
   ),
   (
+    name: gray-light,
+    color: $gray-light,
+  ),
+  (
     name: gray-mid,
     color: $gray-mid,
   ),
   (
-    name: gray-light,
-    color: $gray-light,
+    name: gray-dark,
+    color: $gray-dark,
   ),
   
 );
@@ -204,12 +328,16 @@ $typography-colors: (
     color: $black,
   ),
   (
-    name: gray-mid,
-    color: $gray-mid,
+    name: gray-dark,
+    color: $gray-dark,
   ),
   (
     name: blue-mid,
     color: $blue-mid,
+  ),
+  (
+    name: red-mid,
+    color: $red-mid,
   ),
   (
     name: green-mid,
