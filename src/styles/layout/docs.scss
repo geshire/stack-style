@@ -1,0 +1,31 @@
+@import "../config";
+
+/*.....................................
+  DOCUMENT
+.....................................*/
+
+html,
+body {
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html.sticky-footer {
+  height: 100%;
+
+  body {
+    height: 100%;
+  }
+  .contain-page {
+    min-height: 100%;
+    margin-bottom: -$footer-height;
+
+    &:after {
+      content: " ";
+      display: block;
+      height: $footer-height;
+    }
+  }
+  footer {
+    height: $footer-height;
+  }
+}

@@ -1,0 +1,634 @@
+
+// fonts
+$source-sans-pro: 'Source Sans Pro', sans-serif; 
+
+
+// colors
+$white: #ffffff; 
+$charcoal: #3B3B3B; 
+$black: #000000; 
+$gray-light: #F2F2F2; 
+$gray-mid: #E2E2E2; 
+$gray-dark: #989898; 
+$blue-light: #D0ECFD; 
+$blue-mid: #244DCB; 
+$blue-dark: #1235A1; 
+$blue-black: #0D2470; 
+$blue-bright: #0D4DF1; 
+$yellow-light: #FFEFCF; 
+$yellow-mid: #FFCA65; 
+$yellow-dark: #FFB72F; 
+$green-light: #E3F8EF; 
+$green-mid: #5BD8A0; 
+$green-dark: #27B474; 
+$teal-light: #ADEBEE; 
+$teal-mid: #25BBC1; 
+$teal-dark: #198D92; 
+$violet-light: #FADEFF; 
+$violet-mid: #9C27B0; 
+$violet-dark: #57157E; 
+$red-light: #FFE5E5; 
+$red-mid: #FF6A6A; 
+$red-dark: #C93B3B; 
+$peach-light: #FFD7CB; 
+$peach-mid: #FF8E6C; 
+$navy: #FF8E6C; 
+
+
+// body defaults
+$body-font-family: $source-sans-pro; 
+$body-font-size: 16px; 
+$body-color: $charcoal; 
+$body-font-weight: 400; 
+$body-link-color: $blue-dark; 
+$body-line-height: 140%; 
+$body-link-hover-color: $blue-black; 
+$body-link-active-color: $blue-black; 
+$body-link-visited-color: $blue-black; 
+$body-link-text-decoration: none; 
+$body-link-text-decoration-hover: underline; 
+
+
+// buttons
+$button-styles: (
+  (
+    name: blue,
+    border-radius: 7px,
+    border-color: $blue-bright,
+    border-width: 1px,
+    color: $white,
+    background-color: $blue-bright,
+    font-weight: 600,
+    font-family: $source-sans-pro,
+    active-color: $white,
+    active-background-color: $blue-dark,
+    active-border-color: $blue-dark,
+    hover-color: $white,
+    hover-background-color: $blue-dark,
+    hover-border-color: $blue-dark,
+    selected-text-color: $white,
+    selected-background-color: $blue-dark,
+    selected-border-color: $blue-dark,
+  ),
+  (
+    name: blue-outline,
+    border-radius: 7px,
+    border-color: $blue-bright,
+    border-width: 1px,
+    color: $blue-bright,
+    background-color: $white,
+    font-weight: 600,
+    font-family: $source-sans-pro,
+    active-color: $blue-dark,
+    active-background-color: $white,
+    active-border-color: $blue-dark,
+    hover-color: $blue-dark,
+    hover-background-color: $white,
+    hover-border-color: $blue-dark,
+    selected-text-color: $blue-dark,
+    selected-background-color: $blue-dark,
+    selected-border-color: $blue-dark,
+  ),
+  (
+    name: green,
+    border-radius: 7px,
+    border-color: $green-mid,
+    border-width: 1px,
+    color: $white,
+    background-color: $green-mid,
+    font-weight: 600,
+    font-family: $source-sans-pro,
+    active-color: $white,
+    active-background-color: $green-dark,
+    active-border-color: $green-dark,
+    hover-color: $white,
+    hover-background-color: $green-dark,
+    hover-border-color: $green-dark,
+    selected-text-color: $white,
+    selected-background-color: $green-dark,
+    selected-border-color: $green-dark,
+  ),
+  (
+    name: white,
+    border-radius: 7px,
+    border-color: $gray-mid,
+    border-width: 1px,
+    color: $charcoal,
+    background-color: $white,
+    font-weight: 600,
+    font-family: $source-sans-pro,
+    active-color: $black,
+    active-background-color: $white,
+    active-border-color: $gray-dark,
+    hover-color: $black,
+    hover-background-color: $white,
+    hover-border-color: $gray-dark,
+    selected-text-color: $black,
+    selected-background-color: $white,
+    selected-border-color: $gray-dark,
+  ),
+  (
+    name: navy,
+    border-radius: 7px,
+    border-color: $blue-dark,
+    border-width: 1px,
+    color: $white,
+    background-color: $blue-dark,
+    font-weight: 600,
+    font-family: $source-sans-pro,
+    active-color: $white,
+    active-background-color: $blue-black,
+    active-border-color: $blue-black,
+    hover-color: $white,
+    hover-background-color: $blue-black,
+    hover-border-color: $blue-black,
+    selected-text-color: $white,
+    selected-background-color: $blue-black,
+    selected-border-color: $blue-black,
+  ),
+  
+);
+$button-sizes: (
+  (
+    name: small,
+    horz-padding: 10px,
+    font-size: 14px,
+    height: 30px,
+  ),
+  (
+    name: medium,
+    horz-padding: 15px,
+    font-size: 16px,
+    height: 35px,
+  ),
+  (
+    name: large,
+    horz-padding: 20px,
+    font-size: 18px,
+    height: 45px,
+  ),
+  
+);
+$button-sizes-by-key: (
+  small: (
+    name: small,
+    horz-padding: 10px,
+    font-size: 14px,
+    height: 30px,
+  ),
+  
+medium: (
+    name: medium,
+    horz-padding: 15px,
+    font-size: 16px,
+    height: 35px,
+  ),
+  
+large: (
+    name: large,
+    horz-padding: 20px,
+    font-size: 18px,
+    height: 45px,
+  ),
+  
+
+);
+$button-default-size-horz-padding: 15px; 
+$button-default-size-font-size: 16px; 
+$button-default-size-height: 35px; 
+
+
+// borders
+$shadow: 8px 8px 0px 0px rgba(216, 216, 216, 0.3);
+$border-radius-sizes: (
+  (
+    name: default,
+    size: 10px,
+  ),
+  (
+    name: xsmall,
+    size: 3px,
+  ),
+  (
+    name: small,
+    size: 5px,
+  ),
+  (
+    name: medium,
+    size: 10px,
+  ),
+  
+);
+$border-colors: (
+  (
+    name: gray-mid,
+    color: $gray-mid,
+  ),
+  (
+    name: gray-light,
+    color: $gray-light,
+  ),
+  (
+    name: gray-dark,
+    color: $gray-dark,
+  ),
+  (
+    name: blue-mid,
+    color: $blue-mid,
+  ),
+  (
+    name: blue-dark,
+    color: $blue-dark,
+  ),
+  (
+    name: red-light,
+    color: $red-light,
+  ),
+  
+);
+
+// background
+$background-colors: (
+  (
+    name: blue-light,
+    color: $blue-light,
+  ),
+  (
+    name: blue-mid,
+    color: $blue-mid,
+  ),
+  (
+    name: green-light,
+    color: $green-light,
+  ),
+  (
+    name: green-mid,
+    color: $green-mid,
+  ),
+  (
+    name: red-light,
+    color: $red-light,
+  ),
+  (
+    name: red-mid,
+    color: $red-mid,
+  ),
+  (
+    name: white,
+    color: $white,
+  ),
+  (
+    name: yellow-light,
+    color: $yellow-light,
+  ),
+  (
+    name: yellow-mid,
+    color: $yellow-mid,
+  ),
+  (
+    name: gray-light,
+    color: $gray-light,
+  ),
+  (
+    name: gray-mid,
+    color: $gray-mid,
+  ),
+  (
+    name: gray-dark,
+    color: $gray-dark,
+  ),
+  
+);
+
+// spacing
+$spacing-sizes: (
+  (
+    name: reset,
+    size: 0px,
+  ),
+  (
+    name: xxsmall,
+    size: 5px,
+  ),
+  (
+    name: xsmall,
+    size: 10px,
+  ),
+  (
+    name: small,
+    size: 15px,
+  ),
+  (
+    name: medium,
+    size: 20px,
+  ),
+  (
+    name: large,
+    size: 30px,
+  ),
+  (
+    name: xlarge,
+    size: 40px,
+  ),
+  (
+    name: xxlarge,
+    size: 50px,
+  ),
+  
+);
+
+// layout
+$footer-height: 100px;
+$grid-col-sets: 2,3,4,5,16;
+$ratio-sets: (
+  (9, 16),
+  (5, 7),
+);
+
+// typography
+$typography-colors: (
+  (
+    name: white,
+    color: $white,
+  ),
+  (
+    name: charcoal,
+    color: $charcoal,
+  ),
+  (
+    name: black,
+    color: $black,
+  ),
+  (
+    name: gray,
+    color: $gray-dark,
+  ),
+  (
+    name: blue,
+    color: $blue-mid,
+  ),
+  (
+    name: red,
+    color: $red-mid,
+  ),
+  (
+    name: green,
+    color: $green-mid,
+  ),
+  (
+    name: yellow,
+    color: $yellow-mid,
+  ),
+  
+);
+
+$headers: (
+  (
+    font-family: $source-sans-pro,
+    font-size: 40px,
+    light-weight: 400,
+    default-weight: 700,
+    semi-weight: 600,
+    bold-weight: 700,
+    line-height: 103%,
+    default-color: $black,
+  ),
+  (
+    font-family: $source-sans-pro,
+    font-size: 28px,
+    light-weight: 400,
+    default-weight: 700,
+    semi-weight: 600,
+    bold-weight: 700,
+    line-height: 105%,
+    default-color: $black,
+  ),
+  (
+    font-family: $source-sans-pro,
+    font-size: 21px,
+    light-weight: 400,
+    default-weight: 700,
+    semi-weight: 600,
+    bold-weight: 700,
+    line-height: 105%,
+    default-color: $black,
+  ),
+  
+);
+
+$text: (
+  (
+    font-size: 18px,
+    line-height: 140%,
+    line-tight: 125%,
+    default-weight: 400,
+    semi-weight: 600,
+    bold-weight: 700,
+  ),
+  (
+    font-size: 16px,
+    line-height: 140%,
+    line-tight: 125%,
+    default-weight: 400,
+    semi-weight: 600,
+    bold-weight: 700,
+  ),
+  (
+    font-size: 14px,
+    line-height: 140%,
+    line-tight: 115%,
+    default-weight: 400,
+    semi-weight: 600,
+    bold-weight: 700,
+  ),
+  (
+    font-size: 12px,
+    line-height: 140%,
+    line-tight: 115%,
+    default-weight: 400,
+    semi-weight: 600,
+    bold-weight: 700,
+  ),
+  
+);
+
+$line-height-sizes: (
+  undefined
+);
+
+// lists
+$lists-striped-color: $gray-light;
+
+// icons
+$icons-sizes: (
+  (
+    name: default,
+    size: 35px,
+  ),
+  (
+    name: xxsmall,
+    size: 8px,
+  ),
+  (
+    name: xsmall,
+    size: 15px,
+  ),
+  (
+    name: small,
+    size: 25px,
+  ),
+  (
+    name: medium,
+    size: 35px,
+  ),
+  (
+    name: large,
+    size: 45px,
+  ),
+  (
+    name: xlarge,
+    size: 55px,
+  ),
+  (
+    name: xxlarge,
+    size: 65px,
+  ),
+  
+);
+
+$icons-sizes-by-key: (
+  default: 35px,
+  xxsmall: 8px,
+  xsmall: 15px,
+  small: 25px,
+  medium: 35px,
+  large: 45px,
+  xlarge: 55px,
+  xxlarge: 65px,
+
+);
+
+$icons-colors: (
+  (
+    name: white,
+    hex: $white,
+  ),
+  (
+    name: charcoal,
+    hex: $charcoal,
+  ),
+  (
+    name: gray,
+    hex: $gray-mid,
+  ),
+  (
+    name: blue,
+    hex: $blue-mid,
+  ),
+  (
+    name: yellow,
+    hex: $yellow-mid,
+  ),
+  (
+    name: green,
+    hex: $green-mid,
+  ),
+  
+);
+
+// forms
+$input-styles: (
+  (
+    name: default,
+    border-radius: 3px,
+    background-color: $white,
+    focus-background-color: $white,
+    error-background-color: $red-light,
+    color: $charcoal,
+    focus-color: $black,
+    error-color: $charcoal,
+    placeholder-color: $gray-mid,
+    placeholder-focus-color: $gray-dark,
+    placeholder-error-color: $red-mid,
+    border-width: 1px,
+    border-color: $gray-mid,
+    border-focus-color: $gray-dark,
+    border-error-color: $red-mid,
+  ),
+  (
+    name: gray,
+    border-radius: 3px,
+    background-color: $gray-mid,
+    focus-background-color: $gray-mid,
+    error-background-color: $red-light,
+    color: $charcoal,
+    focus-color: $black,
+    error-color: $charcoal,
+    placeholder-color: $gray-dark,
+    placeholder-focus-color: $gray-dark,
+    placeholder-error-color: $red-mid,
+    border-width: 1px,
+    border-color: $gray-mid,
+    border-focus-color: $gray-dark,
+    border-error-color: $red-mid,
+  ),
+  
+);
+$input-sizes-by-key: (
+  default: (
+    name: default,
+    font-size: 16px,
+    horz-padding: 10px,
+    height: 40px,
+  ),
+  
+small: (
+    name: small,
+    font-size: 14px,
+    horz-padding: 5px,
+    height: 30px,
+  ),
+  
+medium: (
+    name: medium,
+    font-size: 16px,
+    horz-padding: 10px,
+    height: 40px,
+  ),
+  
+large: (
+    name: large,
+    font-size: 18px,
+    horz-padding: 15px,
+    height: 50px,
+  ),
+  
+
+);
+$input-sizes: (
+  (
+    name: default,
+    font-size: 16px,
+    horz-padding: 10px,
+    height: 40px,
+  ),
+  (
+    name: small,
+    font-size: 14px,
+    horz-padding: 5px,
+    height: 30px,
+  ),
+  (
+    name: medium,
+    font-size: 16px,
+    horz-padding: 10px,
+    height: 40px,
+  ),
+  (
+    name: large,
+    font-size: 18px,
+    horz-padding: 15px,
+    height: 50px,
+  ),
+  
+);

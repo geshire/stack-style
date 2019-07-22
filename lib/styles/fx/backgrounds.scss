@@ -1,0 +1,27 @@
+@import "../config";
+
+/*.....................................
+  BACKGROUNDS
+.....................................*/
+
+@each $background in $background-colors {
+  .bg-#{map-get($background, name)} {
+    background-color: map-get($background, color);
+  }
+  .hover-bg-#{map-get($background, name)}:hover {
+    background-color: map-get($background, color);
+  }
+}
+
+.bg-cover {
+  .background-position {
+    background-color: 50% 50%;
+  }
+  background-size: cover;
+}
+
+img.bg-cover {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 100%;
+}

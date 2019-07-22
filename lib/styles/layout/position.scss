@@ -1,0 +1,58 @@
+@import "../config";
+@import "../sizes";
+
+/* POSITION
+.....................................*/
+
+@each $media-size in $media-screen-size-keys {
+  @media #{map-get($media-screen-sizes, $media-size)} {
+    .#{$media-size}fixed {
+      position: fixed !important;
+    }
+    .#{$media-size}absolute {
+      position: absolute !important;
+    }
+    .#{$media-size}relative {
+      position: relative !important;
+    }
+    .#{$media-size}top {
+      top: 0px !important;
+    }
+    .#{$media-size}bottom {
+      bottom: 0px !important;
+    }
+    .#{$media-size}right {
+      right: 0px !important;
+    }
+    .#{$media-size}left {
+      left: 0px !important;
+    }
+    .#{$media-size}auto {
+      margin: auto !important;
+    }
+  }
+}
+.scrollable-y {
+  overflow-y: scroll;
+}
+.scrollable-x {
+  overflow-x: scroll;
+}
+.z-force-top {
+  z-index: 2147483647;
+}
+.z-top {
+  z-index: 2147483646;
+}
+.z-high {
+  z-index: 100000;
+}
+.z-mid {
+  z-index: 10000;
+}
+.z-low {
+  z-index: 1000;
+}
+.z-below {
+  z-index: -1;
+}

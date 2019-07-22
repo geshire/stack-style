@@ -1,0 +1,164 @@
+@import "../config";
+
+/*.....................................
+  BORDERS
+.....................................*/
+
+/* border basis
+.....................................*/
+@mixin border() {
+  border-style: solid;
+  border-color: map-get(nth($border-colors, 1), color);
+}
+
+/* border positioning
+.....................................*/
+.border-all {
+  @include border();
+  border-width: 1px;
+  &.border-mid {
+    border-width: 2px;
+  }
+  &.border-thick {
+    border-width: 3px;
+  }
+}
+.border-vert {
+  @include border();
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  &.border-mid {
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+  }
+  &.border-thick {
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+  }
+}
+.border-horz {
+  @include border();
+  border-left-width: 1px;
+  border-right-width: 1px;
+  &.border-mid {
+    border-left-width: 2px;
+    border-right-width: 2px;
+  }
+  &.border-thick {
+    border-left-width: 3px;
+    border-right-width: 3px;
+  }
+}
+.border-top {
+  @include border();
+  border-top-width: 1px;
+  &.border-mid {
+    border-top-width: 2px;
+  }
+  &.border-thick {
+    border-top-width: 3px;
+  }
+}
+.border-bottom {
+  @include border();
+  border-bottom-width: 1px;
+  &.border-mid {
+    border-bottom-width: 2px;
+  }
+  &.border-thick {
+    border-bottom-width: 3px;
+  }
+}
+.border-left {
+  @include border();
+  border-left-width: 1px;
+  &.border-mid {
+    border-left-width: 2px;
+  }
+  &.border-thick {
+    border-left-width: 3px;
+  }
+}
+.border-right {
+  @include border();
+  border-right-width: 1px;
+  &.border-thin {
+    border-right-width: 2px;
+  }
+  &.border-thick {
+    border-right-width: 3px;
+  }
+}
+
+.border-center {
+  z-index: 1;
+  position: relative;
+
+  &:before {
+    content: " ";
+    display: block;
+    background: map-get(nth($border-colors, 1), color);
+    height: 1px;
+    top: 50%;
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+/* border colors
+.....................................*/
+@each $color in $border-colors {
+  .border-#{map-get($color, name)} {
+    border-color: map-get($color, color) !important;
+    &.border-center:before {
+      background: map-get($color, color) !important;
+    }
+    &.vert-rule:before {
+      background: map-get($color, color) !important;
+    }
+  }
+}
+
+// radius
+@each $radius in $border-radius-sizes {
+  $size: map-get($radius, size);
+  @if (map-get($radius, name) == default) {
+    .radius {
+      border-radius: $size;
+    }
+    .radius-right {
+      border-radius: 0px $size $size 0px;
+    }
+    .radius-left {
+      border-radius: $size 0px 0px $size;
+    }
+    .radius-top {
+      border-radius: $size $size 0px 0px;
+    }
+    .radius-bottom {
+      border-radius: 0px 0px $size $size;
+    }
+  } @else {
+    .radius-#{map-get($radius, name)} {
+      border-radius: $size;
+      &.radius-right {
+        border-radius: 0px $size $size 0px;
+      }
+      &.radius-left {
+        border-radius: $size 0px 0px $size;
+      }
+      &.radius-top {
+        border-radius: $size $size 0px 0px;
+      }
+      &.radius-bottom {
+        border-radius: 0px 0px $size $size;
+      }
+    }
+  }
+}
+
+// box shadow
+.shadow {
+  box-shadow: $shadow;
+}

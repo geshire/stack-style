@@ -1,0 +1,22 @@
+@import "../config";
+
+.ratio {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  .ratio-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  @each $ratio in $ratio-sets {
+    &.ratio--#{nth($ratio, 1)}-#{nth($ratio, 2)}  {
+      padding-bottom: nth($ratio, 1) / nth($ratio, 2) * 100%;
+    }
+  }
+}

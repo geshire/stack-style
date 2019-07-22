@@ -1,0 +1,153 @@
+@import "../config";
+@import "../sizes";
+
+/*.....................................
+  FORMS
+......................................*/
+.form {
+  // fieldsets
+  fieldset {
+    &.disabled label {
+      opacity: 0.5;
+    }
+    label {
+      cursor: default;
+    }
+  }
+
+  // input style base
+  @mixin inputStyle($props) {
+    background-color: map-get($props, background-color);
+    -webkit-appearance: none;
+    font-size: map-get($props, font-size);
+    color: map-get($props, color);
+    line-height: normal;
+
+    border: map-get($props, border-width) solid map-get($props, border-color);
+    border-radius: if(map-get($props, border-radius), map-get($props, border-radius), 0px);
+
+    box-sizing: border-box;
+    transition: border .2s ease, color .2s ease;
+    &::placeholder {
+      color: map-get($props, placeholder-color);
+    }
+
+    &[disabled],
+    &.disabled {
+      opacity: 0.5;
+    }
+
+    // has error
+    &.is-error {
+      border: map-get($props, border-width) solid map-get($props, error-color);
+      // error selected
+      &.selected,
+      &:focus {
+        border: map-get($props, border-width) solid map-get($props, focus-color);
+      }
+      &::placeholder {
+        color: map-get($props, placeholder-color);
+      }
+    }
+
+    // focus
+    &:focus {
+      &::placeholder {
+        color: map-get($props, placeholder-focus-color);
+      }
+      color: map-get($props, focus-color);
+      border: map-get($props, border-width) solid map-get($props, border-focus-color);
+
+      //focus error
+      &.is-error {
+        // focus error selected
+        &.selected {}
+        &::placeholder {
+          color: map-get($props, placeholder-error-color);
+        }
+      }
+    }
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  input[type="search"],
+  input[type="number"] {
+    height: map-get(nth($input-sizes, 1), height);
+    padding: 0px map-get(nth($input-sizes, 1), horz-padding);
+    &.icon-right {
+      background-size: map-get(nth($input-sizes, 1), font-size) map-get(nth($input-sizes, 1), font-size);
+      background-position: right map-get(nth($input-sizes, 1), horz-padding) center;
+      padding-right: map-get(nth($input-sizes, 1), horz-padding) + map-get(nth($input-sizes, 1), font-size) + (map-get(nth($input-sizes, 1), font-size) / 2);
+    }
+    &.icon-left {
+      background-size: map-get(nth($input-sizes, 1), font-size) map-get(nth($input-sizes, 1), font-size);
+      background-position: left map-get(nth($input-sizes, 1), horz-padding) center;
+      padding-left: map-get(nth($input-sizes, 1), horz-padding) + map-get(nth($input-sizes, 1), font-size) + (map-get(nth($input-sizes, 1), font-size) / 2);
+    }
+    @each $media-size in $media-screen-size-keys {
+      @media #{map-get($media-screen-sizes, $media-size)} {
+        @each $input-size in $input-sizes {
+          @if (map-get($input-size, name) == default) {}
+          @else {
+            &.#{$media-size}input-#{map-get($input-size, name)} {
+              height: map-get($input-size, height);
+              font-size: map-get($input-size, font-size);
+              padding: 0px map-get($input-size, horz-padding);
+              &.icon-right {
+                background-size: map-get($input-size, font-size) map-get($input-size, font-size);
+                background-position: right map-get($input-size, horz-padding) center;
+                padding-right: map-get($input-size, horz-padding) + map-get($input-size, font-size) + (map-get($input-size, font-size) / 2);
+              }
+              &.icon-left {
+                background-size: map-get($input-size, font-size) map-get($input-size, font-size);
+                background-position: left map-get($input-size, horz-padding) center;
+                padding-left: map-get($input-size, horz-padding) + map-get($input-size, font-size) + (map-get($input-size, font-size) / 2);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  textarea {
+    padding: map-get(nth($input-sizes, 1), horz-padding);
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  input[type="number"],
+  textarea {
+    @include inputStyle(nth($input-styles, 1));
+    @each $input in $input-styles {
+      @if (map-get($input, name) == default) {}
+      @else {
+        &.input-#{map-get($input, name)} {
+          @include inputStyle($input);
+        }
+      }
+    }
+  }
+}
+
+select {
+  @each $button in $button-styles {
+    &.btn-#{map-get($button, name)} {
+      -webkit-appearance: none;
+      -moz-apperance: none;
+    }
+  }
+  @for $i from 1 through length($text) {
+    &.text-#{$i} {
+      -webkit-appearance: none;
+      -moz-apperance: none;
+      background-color: transparent;
+      border: none;
+    }
+  }
+}

@@ -1,0 +1,119 @@
+@import "../config";
+
+/*.....................................
+  ICONS
+.....................................*/
+i {
+  display: inline-block;
+  white-space: nowrap;
+  background-position: center center;
+  &:before {
+    content: 'i';
+    color: transparent;
+  }
+}
+
+/*.....................................
+  BUTTON ICONS
+......................................*/
+
+/* position
+......................................*/
+$btn-small-width: map-get(map-get($button-sizes-by-key, small), font-size);
+$btn-medium-width: map-get(map-get($button-sizes-by-key, medium), font-size);
+$btn-large-width: map-get(map-get($button-sizes-by-key, large), font-size);
+
+.icon-center {
+  background-position: center center;
+  color: transparent;
+  width: 35px;
+  text-indent: -9999px;
+
+  &.btn-small {
+    width: 35px;
+    background-size: $btn-small-width - 1 $btn-small-width - 1;
+  }
+  &.btn-medium {
+    width: 40px;
+    background-size: $btn-medium-width - 1 $btn-medium-width - 1;
+  }
+  &.btn-large {
+    width: 50px;
+    background-size: $btn-large-width - 1 $btn-large-width - 1;
+  }
+}
+
+$icon-positions: right, left;
+
+@each $pos in $icon-positions {
+  .icon-#{$pos} {
+    &.btn-small {
+      background-position: $pos $btn-small-width - 1 center;
+      background-size: $btn-small-width - 1 $btn-small-width - 1;
+      padding-#{$pos}: $btn-small-width + map-get(map-get($button-sizes-by-key, small), horz-padding) + ($btn-small-width / 2.5);
+    }
+    &.btn-medium {
+      background-position: $pos $btn-medium-width - 1 center;
+      background-size: $btn-medium-width - 1 $btn-medium-width - 1;
+      padding-#{$pos}: $btn-medium-width + map-get(map-get($button-sizes-by-key, medium), horz-padding) + ($btn-medium-width / 2.5);
+    }
+    &.btn-large {
+      background-position: $pos $btn-large-width - 1 center;
+      background-size: $btn-large-width - 1 $btn-large-width - 1;
+      padding-#{$pos}: $btn-large-width + map-get(map-get($button-sizes-by-key, large), horz-padding) + ($btn-large-width / 2.5);
+    }
+    @for $i from 1 through length($headers) {
+      &.head-#{$i} {
+        $text-width: map-get(nth($headers, $i), font-size);
+        display: inline-block;
+        background-position: $pos center;
+        background-size: $text-width - 1 $text-width - 1;
+        padding-#{$pos}: $text-width + ($text-width / 4);
+      }
+    }
+    @for $i from 1 through length($text) {
+      &.text-#{$i} {
+        $text-width: map-get(nth($text, $i), font-size);
+        display: inline-block;
+        background-position: $pos center;
+        background-size: $text-width - 1 $text-width - 1;
+        padding-#{$pos}: $text-width + ($text-width / 4);
+      }
+    }
+  }
+}
+
+/* sizes
+......................................*/
+@each $size in $icons-sizes {
+  $name: map-get($size, name);
+  $size: map-get($size, size);
+
+  @if ($name == "default") {
+    i {
+      background-size: $size $size;
+      height: $size;
+      line-height: $size;
+      width: $size;
+      &.icon-circle {
+        padding: $size / 3;
+        border-radius: $size;
+      }
+    }
+  } @else {
+    .icon-#{$name} {
+      background-size: $size $size;
+    }
+    i {
+      &.icon-#{$name} {
+        height: $size;
+        line-height: $size;
+        width: $size;
+        &.icon-circle {
+          padding: $size / 3;
+          border-radius: $size;
+        }
+      }
+    }
+  }
+}

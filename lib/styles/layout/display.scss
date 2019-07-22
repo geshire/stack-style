@@ -1,0 +1,100 @@
+@import "../config";
+@import "../sizes";
+
+/*.....................................
+  DISPLAY
+.....................................*/
+@each $media-size in $media-screen-size-keys {
+  @media #{map-get($media-screen-sizes, $media-size)} {
+
+    /* block
+    .....................................*/
+    .#{$media-size}block {
+      display: block !important;
+    }
+    .#{$media-size}inline-block {
+      display: inline-block !important;
+    }
+    .#{$media-size}inline {
+      display: inline !important;
+    }
+
+    /* visibility
+    .....................................*/
+    .#{$media-size}invisible {
+      visibility: hidden;
+      pointer-events: none !important;
+    }
+    .#{$media-size}hidden {
+      display: none !important;
+    }
+
+    .#{$media-size}transparent {
+      opacity: .5;
+      transition: opacity 300ms ease;
+    }
+
+    /* alignment
+    .....................................*/
+    .#{$media-size}text-center {
+      text-align: center !important;
+    }
+    .#{$media-size}text-right {
+      text-align: right !important;
+    }
+    .#{$media-size}text-left {
+      text-align: left !important;
+    }
+    .#{$media-size}text-middle {
+      vertical-align: middle;
+    }
+  }
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+.off-page {
+  position: absolute;
+  top: 0;
+  left: -99999px;
+}
+
+.text-middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text-top {
+  vertical-align: middle;
+  &* {
+    align-self: flex-start;
+  }
+}
+.text-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &* {
+    align-self: flex-end;
+  }
+}
+
+.content-vert-middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  &.content-row {
+    flex-direction: row;
+  }
+}
+.content-horz-middle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  &.text-left {
+    justify-content: initial;
+  }
+}
