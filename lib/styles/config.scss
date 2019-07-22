@@ -467,44 +467,44 @@ $icons-sizes: (
   ),
   (
     name: xxsmall,
-    size: 15px,
+    size: 8px,
   ),
   (
     name: xsmall,
-    size: 25px,
+    size: 15px,
   ),
   (
     name: small,
-    size: 35px,
+    size: 25px,
   ),
   (
     name: medium,
-    size: 45px,
+    size: 35px,
   ),
   (
     name: large,
-    size: 55px,
+    size: 45px,
   ),
   (
     name: xlarge,
-    size: 65px,
+    size: 55px,
   ),
   (
     name: xxlarge,
-    size: 75px,
+    size: 65px,
   ),
   
 );
 
 $icons-sizes-by-key: (
   default: 35px,
-  xxsmall: 15px,
-  xsmall: 25px,
-  small: 35px,
-  medium: 45px,
-  large: 55px,
-  xlarge: 65px,
-  xxlarge: 75px,
+  xxsmall: 8px,
+  xsmall: 15px,
+  small: 25px,
+  medium: 35px,
+  large: 45px,
+  xlarge: 55px,
+  xxlarge: 65px,
 
 );
 
@@ -518,57 +518,117 @@ $icons-colors: (
     hex: $charcoal,
   ),
   (
-    name: gray-mid,
+    name: gray,
     hex: $gray-mid,
   ),
   (
-    name: blue-mid,
+    name: blue,
     hex: $blue-mid,
   ),
   (
-    name: yellow-mid,
+    name: yellow,
     hex: $yellow-mid,
   ),
   (
-    name: green-mid,
+    name: green,
     hex: $green-mid,
   ),
   
 );
 
 // forms
-$forms-input-font-size: 16px; 
-$forms-input-background-color: $white; 
-$forms-input-focus-background-color: $white; 
-$forms-input-error-background-color: $white; 
-$forms-input-color: $charcoal; 
-$forms-input-focus-color: $black; 
-$forms-input-error-color: $charcoal; 
-$forms-input-placeholder-color: $gray-mid; 
-$forms-input-placeholder-focus-color: $gray-dark; 
-$forms-input-placeholder-error-color: $red-mid; 
-$forms-input-border-width: 1px; 
-$forms-input-border-color: $gray-mid; 
-$forms-input-border-focus-color: $blue-mid; 
-$forms-input-border-error-color: $red-mid; 
+$input-styles: (
+  (
+    name: default,
+    border-radius: 3px,
+    background-color: $white,
+    focus-background-color: $white,
+    error-background-color: $red-light,
+    color: $charcoal,
+    focus-color: $black,
+    error-color: $charcoal,
+    placeholder-color: $gray-mid,
+    placeholder-focus-color: $gray-dark,
+    placeholder-error-color: $red-mid,
+    border-width: 1px,
+    border-color: $gray-mid,
+    border-focus-color: $gray-dark,
+    border-error-color: $red-mid,
+  ),
+  (
+    name: gray,
+    border-radius: 3px,
+    background-color: $gray-mid,
+    focus-background-color: $gray-mid,
+    error-background-color: $red-light,
+    color: $charcoal,
+    focus-color: $black,
+    error-color: $charcoal,
+    placeholder-color: $gray-dark,
+    placeholder-focus-color: $gray-dark,
+    placeholder-error-color: $red-mid,
+    border-width: 1px,
+    border-color: $gray-mid,
+    border-focus-color: $gray-dark,
+    border-error-color: $red-mid,
+  ),
+  
+);
+$input-sizes-by-key: (
+  default: (
+    name: default,
+    font-size: 16px,
+    horz-padding: 10px,
+    height: 40px,
+  ),
+  
+small: (
+    name: small,
+    font-size: 14px,
+    horz-padding: 5px,
+    height: 30px,
+  ),
+  
+medium: (
+    name: medium,
+    font-size: 16px,
+    horz-padding: 10px,
+    height: 40px,
+  ),
+  
+large: (
+    name: large,
+    font-size: 18px,
+    horz-padding: 15px,
+    height: 50px,
+  ),
+  
 
-
+);
 $input-sizes: (
   (
     name: default,
-    size: 40px,
+    font-size: 16px,
+    horz-padding: 10px,
+    height: 40px,
   ),
   (
     name: small,
-    size: 30px,
+    font-size: 14px,
+    horz-padding: 5px,
+    height: 30px,
   ),
   (
     name: medium,
-    size: 40px,
+    font-size: 16px,
+    horz-padding: 10px,
+    height: 40px,
   ),
   (
     name: large,
-    size: 60px,
+    font-size: 18px,
+    horz-padding: 15px,
+    height: 50px,
   ),
   
 );

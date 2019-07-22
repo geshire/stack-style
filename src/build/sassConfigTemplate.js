@@ -83,8 +83,12 @@ $icons-colors: (
 );
 
 // forms
-${props.forms.inputStyles}
-
+$input-styles: (
+  ${props.forms.inputStyles}
+);
+$input-sizes-by-key: (
+  ${props.forms.inputSizesByKey}
+);
 $input-sizes: (
   ${props.forms.inputSizes}
 );

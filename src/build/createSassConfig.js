@@ -98,12 +98,14 @@ export default (config) => {
 
   /* forms
   .......................................*/
-  Object.keys(config.forms.inputStyles).map((key) => {
-    props.forms.inputStyles = `${props.forms.inputStyles || ""}$forms-input-${formatKey(key)}: ${config.forms.inputStyles[key]}; \n`
+  config.forms.inputStyles.forEach((input) => {
+    props.forms.inputStyles = `${props.forms.inputStyles || ""}${arrayItemTemplate(input)}`;
   });
-
-  config.forms.inputSizes.forEach((item) => {
-    props.forms.inputSizes = `${props.forms.inputSizes || ""}${arrayItemTemplate(item)}`;
+  config.forms.inputSizes.forEach((input) => {
+    props.forms.inputSizes = `${props.forms.inputSizes || ""}${arrayItemTemplate(input)}`;
+  });
+  config.forms.inputSizes.forEach((input) => {
+    props.forms.inputSizesByKey = `${props.forms.inputSizesByKey || ""}${input.name}: ${arrayItemTemplate(input)}\n`
   });
 
   return template(config, props);

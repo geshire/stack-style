@@ -5,7 +5,7 @@ import { isArray } from "lodash";
 .................................*/
 export default async (distDirectory, list) => {
   const arr = list.map((item) => {
-    return `icon-${item.fileName}`;
+    return `icon-${item}`;
   });
   return await fs.promises.writeFile(`${distDirectory}/../config/iconList.json`, JSON.stringify(arr, null, 2), 'utf8');
 };

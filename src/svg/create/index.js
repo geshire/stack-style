@@ -5,6 +5,14 @@ import { flatten, compact } from "lodash";
 
 const createSvg = async(colors, config, iconsDirectory, distDirectory) => {
   const svgList = [];
+
+  const isValid = (file) => {
+    if (!file.substr(-4).match(/.svg|.png/)) {
+      return;
+    }
+    return file.split('.svg')[0];
+  }
+
   try {
     const files = await fs.promises.readdir(iconsDirectory);
 
@@ -21,6 +29,9 @@ const createSvg = async(colors, config, iconsDirectory, distDirectory) => {
       return await fs.promises.writeFile(`${distDirectory}/icons/${item.fileName}.css`, item.css);
     }
 
+    const getList = async() => {
+      return await Promise.all(files.map(file => isValid(file)));
+    }
     const getData = async() => {
       return await Promise.all(files.map(file => parseFile(file)));
     }
@@ -30,10 +41,11 @@ const createSvg = async(colors, config, iconsDirectory, distDirectory) => {
     }
 
     const data = compact(flatten(await getData()));
-    console.log('writing css');
     await writeCSS(data);
-    console.log('generating icon list');
-    return await generateIconList(distDirectory, data);
+
+    const list = compact(flatten(await getList()));
+    return await generateIconList(distDirectory, list);
+
   } catch (err) {
     console.error("Error occured while reading directory!", err);
   }
