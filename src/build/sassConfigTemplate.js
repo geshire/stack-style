@@ -15,7 +15,10 @@ $button-styles: (
   ${props.buttonStyles}
 );
 $button-sizes: (
-  ${props.buttonSizes}
+  ${props.buttons.sizes}
+);
+$button-sizes-by-key: (
+  ${props.buttons.sizesByKey}
 );
 ${props.buttonDefaultSize}
 

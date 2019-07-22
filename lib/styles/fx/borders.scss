@@ -15,77 +15,77 @@
 .....................................*/
 .border-all {
   @include border();
-  border-width: 2px;
-  &.border--thin {
-    border-width: 1px;
+  border-width: 1px;
+  &.border-mid {
+    border-width: 2px;
   }
-  &.border--thick {
+  &.border-thick {
     border-width: 3px;
   }
 }
 .border-vert {
   @include border();
-  border-top-width: 2px;
-  border-bottom-width: 2px;
-  &.border--thin {
-    border-top-width: 1px;
-    border-bottom-width: 1px;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  &.border-mid {
+    border-top-width: 2px;
+    border-bottom-width: 2px;
   }
-  &.border--thick {
+  &.border-thick {
     border-top-width: 3px;
     border-bottom-width: 3px;
   }
 }
 .border-horz {
   @include border();
-  border-left-width: 2px;
-  border-right-width: 2px;
-  &.border--thin {
-    border-left-width: 1px;
-    border-right-width: 1px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  &.border-mid {
+    border-left-width: 2px;
+    border-right-width: 2px;
   }
-  &.border--thick {
+  &.border-thick {
     border-left-width: 3px;
     border-right-width: 3px;
   }
 }
 .border-top {
   @include border();
-  border-top-width: 2px;
-  &.border--thin {
-    border-top-width: 1px;
+  border-top-width: 1px;
+  &.border-mid {
+    border-top-width: 2px;
   }
-  &.border--thick {
+  &.border-thick {
     border-top-width: 3px;
   }
 }
 .border-bottom {
   @include border();
-  border-bottom-width: 2px;
-  &.border--thin {
-    border-bottom-width: 1px;
+  border-bottom-width: 1px;
+  &.border-mid {
+    border-bottom-width: 2px;
   }
-  &.border--thick {
+  &.border-thick {
     border-bottom-width: 3px;
   }
 }
 .border-left {
   @include border();
-  border-left-width: 2px;
-  &.border--thin {
-    border-left-width: 1px;
+  border-left-width: 1px;
+  &.border-mid {
+    border-left-width: 2px;
   }
-  &.border--thick {
+  &.border-thick {
     border-left-width: 3px;
   }
 }
 .border-right {
   @include border();
-  border-right-width: 2px;
-  &.border--thin {
-    border-right-width: 1px;
+  border-right-width: 1px;
+  &.border-thin {
+    border-right-width: 2px;
   }
-  &.border--thick {
+  &.border-thick {
     border-right-width: 3px;
   }
 }
@@ -109,7 +109,7 @@
 /* border colors
 .....................................*/
 @each $color in $border-colors {
-  .border--#{map-get($color, name)} {
+  .border-#{map-get($color, name)} {
     border-color: map-get($color, color) !important;
     &.border-center:before {
       background: map-get($color, color) !important;
@@ -140,7 +140,7 @@
       border-radius: 0px 0px $size $size;
     }
   } @else {
-    .radius--#{map-get($radius, name)} {
+    .radius-#{map-get($radius, name)} {
       border-radius: $size;
       &.radius-right {
         border-radius: 0px $size $size 0px;

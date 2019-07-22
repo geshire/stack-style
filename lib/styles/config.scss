@@ -169,6 +169,30 @@ $button-sizes: (
   ),
   
 );
+$button-sizes-by-key: (
+  small: (
+    name: small,
+    horz-padding: 10px,
+    font-size: 14px,
+    height: 30px,
+  ),
+  
+medium: (
+    name: medium,
+    horz-padding: 15px,
+    font-size: 16px,
+    height: 35px,
+  ),
+  
+large: (
+    name: large,
+    horz-padding: 20px,
+    font-size: 18px,
+    height: 45px,
+  ),
+  
+
+);
 $button-default-size-horz-padding: 15px; 
 $button-default-size-font-size: 16px; 
 $button-default-size-height: 35px; 
@@ -182,6 +206,10 @@ $border-radius-sizes: (
     size: 10px,
   ),
   (
+    name: xsmall,
+    size: 3px,
+  ),
+  (
     name: small,
     size: 5px,
   ),
@@ -193,16 +221,12 @@ $border-radius-sizes: (
 );
 $border-colors: (
   (
-    name: red-light,
-    color: $red-light,
+    name: gray-mid,
+    color: $gray-mid,
   ),
   (
     name: gray-light,
     color: $gray-light,
-  ),
-  (
-    name: gray-mid,
-    color: $gray-mid,
   ),
   (
     name: gray-dark,
@@ -211,6 +235,14 @@ $border-colors: (
   (
     name: blue-mid,
     color: $blue-mid,
+  ),
+  (
+    name: blue-dark,
+    color: $blue-dark,
+  ),
+  (
+    name: red-light,
+    color: $red-light,
   ),
   
 );
@@ -328,23 +360,23 @@ $typography-colors: (
     color: $black,
   ),
   (
-    name: gray-dark,
+    name: gray,
     color: $gray-dark,
   ),
   (
-    name: blue-mid,
+    name: blue,
     color: $blue-mid,
   ),
   (
-    name: red-mid,
+    name: red,
     color: $red-mid,
   ),
   (
-    name: green-mid,
+    name: green,
     color: $green-mid,
   ),
   (
-    name: yellow-mid,
+    name: yellow,
     color: $yellow-mid,
   ),
   

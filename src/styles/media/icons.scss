@@ -19,68 +19,65 @@ i {
 
 /* position
 ......................................*/
-.icon--center {
-  background-position: center center !important;
-  color: transparent !important;
-  width: 25px;
-  text-indent: -9999px;
-  background-size: map-get($icons-sizes-by-key, small) map-get($icons-sizes-by-key, small);
+$btn-small-width: map-get(map-get($button-sizes-by-key, small), font-size);
+$btn-medium-width: map-get(map-get($button-sizes-by-key, medium), font-size);
+$btn-large-width: map-get(map-get($button-sizes-by-key, large), font-size);
 
-  &.btn--xxsmall {
-    width: 25px;
-    padding: 0 10px !important;
-    background-size: 18px 18px;
-  }
-  &.btn--xsmall {
+.icon-center {
+  background-position: center center;
+  color: transparent;
+  width: 35px;
+  text-indent: -9999px;
+
+  &.btn-small {
     width: 35px;
-    padding: 0 10px !important;
-    background-size: map-get($icons-sizes-by-key, xsmall) map-get($icons-sizes-by-key, xsmall);
+    background-size: $btn-small-width - 1 $btn-small-width - 1;
   }
-  &.btn--small {
+  &.btn-medium {
     width: 40px;
-    padding: 0 10px !important;
-    background-size: map-get($icons-sizes-by-key, small) map-get($icons-sizes-by-key, small);
+    background-size: $btn-medium-width - 1 $btn-medium-width - 1;
   }
-  &.btn--medium {
+  &.btn-large {
     width: 50px;
-    padding: 0 20px !important;
-    background-size: contain;
-  }
-  &.btn--large {
-    width: 60px;
-    padding: 0 30px !important;
-    background-size: map-get($icons-sizes-by-key, medium) map-get($icons-sizes-by-key, medium);
+    background-size: $btn-large-width - 1 $btn-large-width - 1;
   }
 }
 
 $icon-positions: right, left;
 
 @each $pos in $icon-positions {
-  .icon--#{$pos} {
-    &.btn--small {
-      background-size: map-get($icons-sizes-by-key, xsmall) map-get($icons-sizes-by-key, xsmall);
-      padding-#{pos}: map-get($icons-sizes-by-key, xsmall) + 10;
+  .icon-#{$pos} {
+    &.btn-small {
+      background-position: $pos $btn-small-width - 1 center;
+      background-size: $btn-small-width - 1 $btn-small-width - 1;
+      padding-#{$pos}: $btn-small-width + map-get(map-get($button-sizes-by-key, small), horz-padding) + ($btn-small-width / 2.5);
     }
-    &.btn--medium {
-      background-size: map-get($icons-sizes-by-key, small) map-get($icons-sizes-by-key, small);
-      padding-#{pos}: map-get($icons-sizes-by-key, small) + 10;
+    &.btn-medium {
+      background-position: $pos $btn-medium-width - 1 center;
+      background-size: $btn-medium-width - 1 $btn-medium-width - 1;
+      padding-#{$pos}: $btn-medium-width + map-get(map-get($button-sizes-by-key, medium), horz-padding) + ($btn-medium-width / 2.5);
     }
-    &.btn--large {
-      background-size: map-get($icons-sizes-by-key, medium) map-get($icons-sizes-by-key, medium);
-      padding-#{pos}: map-get($icons-sizes-by-key, medium) + 10;
+    &.btn-large {
+      background-position: $pos $btn-large-width - 1 center;
+      background-size: $btn-large-width - 1 $btn-large-width - 1;
+      padding-#{$pos}: $btn-large-width + map-get(map-get($button-sizes-by-key, large), horz-padding) + ($btn-large-width / 2.5);
     }
     @for $i from 1 through length($headers) {
       &.head-#{$i} {
-        background-position: $pos 0px center;
-        background-size: map-get($icons-sizes-by-key, small) * 1.5 map-get($icons-sizes-by-key, small) * 1.5;
-        padding-#{$pos}: map-get($icons-sizes-by-key, small) * 1.5;
+        $text-width: map-get(nth($headers, $i), font-size);
+        display: inline-block;
+        background-position: $pos center;
+        background-size: $text-width - 1 $text-width - 1;
+        padding-#{$pos}: $text-width + ($text-width / 4);
       }
     }
     @for $i from 1 through length($text) {
       &.text-#{$i} {
-        background-position: $pos 0px center;
-        background-size: map-get($icons-sizes-by-key, xsmall) * 1.5 map-get($icons-sizes-by-key, xsmall) * 1.5;
-        padding-#{$pos}: map-get($icons-sizes-by-key, xsmall) * 1.5;
+        $text-width: map-get(nth($text, $i), font-size);
+        display: inline-block;
+        background-position: $pos center;
+        background-size: $text-width - 1 $text-width - 1;
+        padding-#{$pos}: $text-width + ($text-width / 4);
       }
     }
   }
@@ -94,25 +91,25 @@ $icon-positions: right, left;
 
   @if ($name == "default") {
     i {
-      background-size: $size $size !important;
+      background-size: $size $size;
       height: $size;
       line-height: $size;
       width: $size;
-      &.icon--circle {
+      &.icon-circle {
         padding: $size / 3;
         border-radius: $size;
       }
     }
   } @else {
-    .icon--#{$name} {
-      background-size: $size $size !important;
+    .icon-#{$name} {
+      background-size: $size $size;
     }
     i {
-      &.icon--#{$name} {
+      &.icon-#{$name} {
         height: $size;
         line-height: $size;
         width: $size;
-        &.icon--circle {
+        &.icon-circle {
           padding: $size / 3;
           border-radius: $size;
         }

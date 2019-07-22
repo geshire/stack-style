@@ -22,6 +22,7 @@ export default (config) => {
     typography: {},
     forms: {},
     icons: {},
+    buttons: {},
   };
 
   /* colors
@@ -48,8 +49,12 @@ export default (config) => {
     props.buttonStyles = `${props.buttonStyles || ""}${arrayItemTemplate(button)}`;
   });
   config.buttons.sizes.forEach((button) => {
-    props.buttonSizes = `${props.buttonSizes || ""}${arrayItemTemplate(button)}`;
+    props.buttons.sizes = `${props.buttons.sizes || ""}${arrayItemTemplate(button)}`;
   });
+  config.buttons.sizes.forEach((button) => {
+    props.buttons.sizesByKey = `${props.buttons.sizesByKey || ""}${button.name}: ${arrayItemTemplate(button)}\n`
+  });
+
   Object.keys(config.buttons.defaultSize).map((key) => {
     props.buttonDefaultSize = `${props.buttonDefaultSize || ""}$button-default-size-${formatKey(key)}: ${config.buttons.defaultSize[key]}; \n`
   });

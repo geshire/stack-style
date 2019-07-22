@@ -16,7 +16,6 @@
   font-family: $body-font-family;
   font-size: $button-default-size-font-size;
   text-align: center;
-  line-height: $button-default-size-height;
   height: $button-default-size-height;
 
   background-color: transparent;
@@ -137,32 +136,32 @@
 
 .btn-circle {
   border-radius: 50% !important;
-  &.btn--xxsmall,
-  &.btn--xxsmall.icon--center {
+  &.btn-xxsmall,
+  &.btn-xxsmall.icon--center {
     height: 25px !important;
     width: 25px !important;
     padding: 0 !important;
   }
-  &.btn--xsmall,
-  &.btn--xsmall.icon--center {
+  &.btn-xsmall,
+  &.btn-xsmall.icon--center {
     height: 35px !important;
     width: 35px !important;
     padding: 0 !important;
   }
-  &.btn--small,
-  &.btn--small.icon--center {
+  &.btn-small,
+  &.btn-small.icon--center {
     height: 35px !important;
     width: 35px !important;
     padding: 0 !important;
   }
-  &.btn--medium,
-  &.btn--medium.icon--center {
+  &.btn-medium,
+  &.btn-medium.icon--center {
     height: 40px !important;
     width: 40px !important;
     padding: 0 !important;
   }
-  &.btn--large,
-  &.btn--large.icon--center {
+  &.btn-large,
+  &.btn-large.icon--center {
     height: 50px !important;
     width: 50px !important;
     padding: 0 !important;
@@ -180,10 +179,9 @@
   @media #{map-get($media-screen-sizes, $media-size)} {
     @each $button in $button-sizes {
       .#{$media-size}btn-#{map-get($button, name)} {
-        padding: 0 map-get($button, horz-padding);
+        padding: 0 map-get($button, horz-padding) 1px map-get($button, horz-padding);
         font-size: map-get($button, font-size);
         height: map-get($button, height);
-        line-height: map-get($button, height);
       }
     }
   }
@@ -193,9 +191,9 @@
 /* buttons group
 ......................................*/
 .btn-group {
-  &.btn-group--center,
-  &.btn-group--left,
-  &.btn-group--right {
+  &.btn-group-center,
+  &.btn-group-left,
+  &.btn-group-right {
     @each $button in $button-styles {
       .btn-#{map-get($button, name)} {
         display: inline-block;
@@ -204,13 +202,13 @@
     }
   }
 
-  &.btn-group--center {
+  &.btn-group-center {
     text-align: center;
   }
-  &.btn-group--left {
+  &.btn-group-left {
     text-align: left;
   }
-  &.btn-group--right {
+  &.btn-group-right {
     text-align: right;
   }
 
