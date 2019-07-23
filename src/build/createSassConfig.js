@@ -107,11 +107,14 @@ export default (config) => {
   config.forms.inputSizes.forEach((input) => {
     props.forms.inputSizesByKey = `${props.forms.inputSizesByKey || ""}${input.name}: ${arrayItemTemplate(input)}\n`
   });
-  
+
   /* forms / checkboxes
   .......................................*/
   config.forms.checkboxStyles.forEach((checkbox) => {
     props.forms.checkboxStyles = `${props.forms.checkboxStyles || ""}${arrayItemTemplate(checkbox)}`;
+  });
+  config.forms.checkboxStyles.forEach((checkbox) => {
+    props.forms.checkboxStylesByKey = `${props.forms.checkboxStylesByKey || ""}${checkbox.name}: ${arrayItemTemplate(checkbox)}\n`
   });
   config.forms.checkboxSizes.forEach((checkbox) => {
     props.forms.checkboxSizes = `${props.forms.checkboxSizes || ""}${arrayItemTemplate(checkbox)}`;

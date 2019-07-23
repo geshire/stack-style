@@ -2,6 +2,61 @@
 /*.....................................
   CHECKBOXES
 .....................................*/
+// checkbox style base
+@mixin checkboxStyle($props) {
+  label {
+    .checkbox-icon {
+      border: map-get($props, border-width) solid map-get($props, border-color);
+      background-color: map-get($props, background-color);
+      border-radius: map-get($props, border-radius);
+    }
+    .checkbox-label {
+      color: map-get($props, label-color);
+    }
+
+    &:hover {
+      .checkbox-label {
+        color: map-get($props, label-hover-color);
+      }
+      .checkbox-icon {
+        border: map-get($props, border-width) solid map-get($props, border-hover-color);
+        background: map-get($props, background-hover-color);
+      }
+    }
+  }
+  input[type=checkbox]:checked + label {
+    background-color: map-get($props, background-color);
+    .checkbox-icon {
+      background:  map-get($props, background-checked-color);
+      border: map-get($props, border-width) solid map-get($props, border-checked-color);
+    }
+  }
+}
+
+@mixin checkboxSize($props) {
+  label {
+    .checkbox-icon {
+      width: map-get($props, label-font-size);
+      height: map-get($props, label-font-size);
+    }
+    .checkbox-label {
+      font-size: map-get($props, label-font-size);
+      padding-left: map-get($props, label-font-size) + map-get($props, label-font-size) / 2;
+    }
+  }
+  input[type=checkbox]:checked + label {
+    $dimension: map-get($props, label-font-size) / 3 * 2.5;
+    .checkbox-icon {
+      i {
+        width: $dimension;
+        height: $dimension;
+        top: #{(map-get($props, label-font-size) - $dimension) / 2};
+        left: #{(map-get($props, label-font-size) - $dimension) / 2};
+      }
+    }
+  }
+}
+
 .checkbox {
   display: inline-block;
   line-height: 0;
@@ -14,35 +69,25 @@
     position: relative;
     .checkbox-icon {
       position: absolute;
-      top: 1px;
+      top: 2px;
       left: 0;
       display: inline-block;
-      width: 16px;
-      height: 16px;
-      border: 1px solid $gray-light;
-      background: $white;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
-      border-radius: 3px;
       transition: all 100ms ease;
-    }
-    .checkbox-label {
-      padding-left: 23px;
     }
 
     &:hover {
       cursor: pointer;
-      .checkbox-icon {
-        border: 1px solid $gray-mid;
-        background: $white;
-      }
     }
   }
 
-  // .user-select(none);
+  &.disabled,
+  input[type=checkbox][disabled] + label {
+    opacity: 0.5;
+  }
 
   input[type=checkbox] {
     display: none;
-
     & + label {
       .checkbox-icon i {
         display: none;
@@ -50,20 +95,34 @@
     }
 
     &:checked + label {
-      background-color: $white;
       .checkbox-icon {
-        background: $blue-mid;
-        border: 1px solid $blue-mid;
         i {
           display: block;
           position: absolute;
-          top: 1px;
-          left: 1px;
           background-size: contain;
-          width: 14px;
-          height: 14px;
         }
       }
+    }
+  }
+
+  @include checkboxSize(map-get($checkbox-sizes-by-key, default));
+  @include checkboxStyle(map-get($checkbox-styles-by-key, default));
+}
+
+@each $checkbox-size in $checkbox-sizes {
+  @if (map-get($checkbox-size, name) == default) {}
+  @else {
+    &.checkbox-#{map-get($checkbox-size, name)} {
+      @include checkboxSize($checkbox-size);
+    }
+  }
+}
+
+@each $checkbox-style in $checkbox-styles {
+  @if (map-get($checkbox-style, name) == default) {}
+  @else {
+    &.checkbox-#{map-get($checkbox-style, name)} {
+      @include checkboxStyle($checkbox-style);
     }
   }
 }
