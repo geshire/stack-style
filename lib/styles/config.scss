@@ -244,6 +244,10 @@ $border-colors: (
     name: red-light,
     color: $red-light,
   ),
+  (
+    name: red-mid,
+    color: $red-mid,
+  ),
   
 );
 
@@ -256,6 +260,10 @@ $background-colors: (
   (
     name: blue-mid,
     color: $blue-mid,
+  ),
+  (
+    name: blue-dark,
+    color: $blue-dark,
   ),
   (
     name: green-light,
