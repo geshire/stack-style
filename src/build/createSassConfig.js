@@ -96,7 +96,7 @@ export default (config) => {
     });
   });
 
-  /* forms
+  /* forms / input
   .......................................*/
   config.forms.inputStyles.forEach((input) => {
     props.forms.inputStyles = `${props.forms.inputStyles || ""}${arrayItemTemplate(input)}`;
@@ -106,6 +106,21 @@ export default (config) => {
   });
   config.forms.inputSizes.forEach((input) => {
     props.forms.inputSizesByKey = `${props.forms.inputSizesByKey || ""}${input.name}: ${arrayItemTemplate(input)}\n`
+  });
+
+  /* forms / checkboxes
+  .......................................*/
+  config.forms.checkboxStyles.forEach((checkbox) => {
+    props.forms.checkboxStyles = `${props.forms.checkboxStyles || ""}${arrayItemTemplate(checkbox)}`;
+  });
+  config.forms.checkboxStyles.forEach((checkbox) => {
+    props.forms.checkboxStylesByKey = `${props.forms.checkboxStylesByKey || ""}${checkbox.name}: ${arrayItemTemplate(checkbox)}\n`
+  });
+  config.forms.checkboxSizes.forEach((checkbox) => {
+    props.forms.checkboxSizes = `${props.forms.checkboxSizes || ""}${arrayItemTemplate(checkbox)}`;
+  });
+  config.forms.checkboxSizes.forEach((checkbox) => {
+    props.forms.checkboxSizesByKey = `${props.forms.checkboxSizesByKey || ""}${checkbox.name}: ${arrayItemTemplate(checkbox)}\n`
   });
 
   return template(config, props);

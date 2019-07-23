@@ -244,6 +244,10 @@ $border-colors: (
     name: red-light,
     color: $red-light,
   ),
+  (
+    name: red-mid,
+    color: $red-mid,
+  ),
   
 );
 
@@ -256,6 +260,10 @@ $background-colors: (
   (
     name: blue-mid,
     color: $blue-mid,
+  ),
+  (
+    name: blue-dark,
+    color: $blue-dark,
   ),
   (
     name: green-light,
@@ -629,6 +637,70 @@ $input-sizes: (
     font-size: 18px,
     horz-padding: 15px,
     height: 50px,
+  ),
+  
+);
+
+$checkbox-styles: (
+  (
+    name: default,
+    background-color: $white,
+    background-checked-color: $blue-mid,
+    background-hover-color: $white,
+    background-error-color: $red-light,
+    label-color: $charcoal,
+    label-hover-color: $black,
+    label-error-color: $charcoal,
+    border-width: 1px,
+    border-color: $gray-light,
+    border-radius: 3px,
+    border-hover-color: $gray-mid,
+    border-error-color: $red-mid,
+    border-checked-color: $blue-mid,
+  ),
+  
+);
+$checkbox-styles-by-key: (
+  default: (
+    name: default,
+    background-color: $white,
+    background-checked-color: $blue-mid,
+    background-hover-color: $white,
+    background-error-color: $red-light,
+    label-color: $charcoal,
+    label-hover-color: $black,
+    label-error-color: $charcoal,
+    border-width: 1px,
+    border-color: $gray-light,
+    border-radius: 3px,
+    border-hover-color: $gray-mid,
+    border-error-color: $red-mid,
+    border-checked-color: $blue-mid,
+  ),
+  
+
+);
+$checkbox-sizes-by-key: (
+  small: (
+    name: small,
+    label-font-size: 14px,
+  ),
+  
+default: (
+    name: default,
+    label-font-size: 16px,
+  ),
+  
+
+);
+$checkbox-sizes: (
+  (
+    name: small,
+    label-font-size: 14px,
+  ),
+  (
+    name: default,
+    label-font-size: 16px,
   ),
   
 );

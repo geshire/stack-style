@@ -92,4 +92,17 @@ $input-sizes-by-key: (
 $input-sizes: (
   ${props.forms.inputSizes}
 );
+
+$checkbox-styles: (
+  ${props.forms.checkboxStyles}
+);
+$checkbox-styles-by-key: (
+  ${props.forms.checkboxStylesByKey}
+);
+$checkbox-sizes-by-key: (
+  ${props.forms.checkboxSizesByKey}
+);
+$checkbox-sizes: (
+  ${props.forms.checkboxSizes}
+);
 `;
