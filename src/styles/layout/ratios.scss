@@ -15,7 +15,7 @@
   }
 
   @each $ratio in $ratio-sets {
-    &.ratio--#{nth($ratio, 1)}-#{nth($ratio, 2)}  {
+    &.ratio-#{nth($ratio, 1)}-#{nth($ratio, 2)}  {
       padding-bottom: nth($ratio, 1) / nth($ratio, 2) * 100%;
     }
   }

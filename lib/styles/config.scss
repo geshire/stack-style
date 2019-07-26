@@ -7,6 +7,7 @@ $source-sans-pro: 'Source Sans Pro', sans-serif;
 $white: #ffffff; 
 $charcoal: #3B3B3B; 
 $black: #000000; 
+$gray-xlight: #FBFBFB; 
 $gray-light: #F2F2F2; 
 $gray-mid: #E2E2E2; 
 $gray-dark: #989898; 
@@ -294,6 +295,10 @@ $background-colors: (
     color: $yellow-mid,
   ),
   (
+    name: gray-xlight,
+    color: $gray-xlight,
+  ),
+  (
     name: gray-light,
     color: $gray-light,
   ),
@@ -465,7 +470,10 @@ $line-height-sizes: (
 );
 
 // lists
-$lists-striped-color: $gray-light;
+$lists-striped-color: $gray-xlight;
+
+// tables
+$tables-striped-color: $gray-xlight;
 
 // icons
 $icons-sizes: (
@@ -547,7 +555,7 @@ $icons-colors: (
 // forms
 $input-styles: (
   (
-    name: default,
+    name: white,
     border-radius: 3px,
     background-color: $white,
     focus-background-color: $white,

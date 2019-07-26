@@ -1,0 +1,15 @@
+@import "../config";
+
+/*.....................................
+  TABLES
+.....................................*/
+
+table {
+  @if ($tables-striped-color) {
+    &.table-striped {
+      tr:nth-child(odd) {
+        background: $tables-striped-color;
+      }
+    }
+  }
+}

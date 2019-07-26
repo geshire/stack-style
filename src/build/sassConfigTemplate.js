@@ -69,6 +69,9 @@ $line-height-sizes: (
 // lists
 $lists-striped-color: ${config.layout.listsStripedColor};
 
+// tables
+$tables-striped-color: ${config.layout.tablesStripedColor};
+
 // icons
 $icons-sizes: (
   ${props.icons.sizes}

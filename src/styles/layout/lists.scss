@@ -6,31 +6,15 @@
 
 ul, ol {
   // inline lists
+  &.list-no-style {
+    list-style: none;
+    li {
+      list-style: none;
+    }
+  }
   &.list-inline {
-    list-style: none;
     li {
-      list-style: none;
       display: inline-block;
-    }
-  }
-  &.list-inline-float {
-    *zoom: 1;
-    li {
-      display: block;
-      float: left;
-    }
-    &:after {
-      content: " ";
-      display: table;
-      clear: both;
-    }
-  }
-
-  // no bullets or numbers
-  &.list-no-bullets {
-    list-style: none;
-    li {
-      list-style: none;
     }
   }
   // striped

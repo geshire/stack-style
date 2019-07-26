@@ -2,38 +2,6 @@
   UTILITIES
 .....................................*/
 
-// truncate
-.truncate {
-  max-width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: inline-block;
-  &.truncate--xlarge {
-    max-width: 90%;
-  }
-  &.truncate--large {
-    max-width: 75%;
-  }
-  &.truncate--medium {
-    max-width: 60%;
-  }
-  &.truncate--small {
-    max-width: 40%;
-  }
-}
-
-// transparency
-.transparent-low {
-  opacity: .8;
-}
-.transparent-mid {
-  opacity: .5;
-}
-.transparent-high {
-  opacity: .3;
-}
-
 // cursors
 .cursor-pointer:hover {
   cursor: pointer;
@@ -42,12 +10,18 @@
   cursor: move;
 }
 
-// overflow hidden
-.overflow-hidden {
+// scrolling
+.scrollable-hidden {
   overflow: hidden;
 }
+.scrollable-y {
+  overflow-y: scroll;
+}
+.scrollable-x {
+  overflow-x: scroll;
+}
 
-// z index
+// stacking
 .z-below {
   z-index: -10;
 }
@@ -70,17 +44,40 @@
   z-index: 2147483647;
 }
 
-// hover
-.hover--transparent {
+// transparency
+.hover-transparent-low,
+.hover-transparent-mid,
+.hover-transparent-hight {
   transition: opacity 300 ease;
-  &:hover {
-    opacity: .5;
-  }
 }
-.hover--hidden {
+
+.hover-transparent-low:hover,
+.transparent-low {
+  opacity: .8;
+}
+
+.hover-transparent-mid:hover,
+.transparent-mid {
+  opacity: .5;
+}
+
+.hover-transparent-high:hover,
+.transparent-high {
+  opacity: .3;
+}
+.hover-hidden {
   opacity: 1;
   transition: opacity 300 ease;
   &:hover {
     opacity: 0;
   }
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+.off-page {
+  position: absolute;
+  top: 0;
+  left: -99999px;
 }
