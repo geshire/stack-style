@@ -8,10 +8,9 @@ All notable changes to this project will be documented in this file.
 - Generate checkboxes via provided configuration
 - Allow for multiple styles and sizes of checkboxes
 
-## [0.0.1-alpha.3] - 2019-07-23
+## [0.0.1-alpha.3] - 2019-07-28
 - Integrate custom loaders
 - Input elements should be atomic
-- Add striped tables option
 - Rename letter spacing classes
 - Fix bug with link colors
 - Remove symbols
@@ -20,3 +19,5 @@ All notable changes to this project will be documented in this file.
 - Remove unnecessary list classes
 - Remove unnecessary flex classes
 - Refactor form sass for smaller output
+- Add box shadows
+- Allow for custom sass files
