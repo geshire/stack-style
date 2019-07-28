@@ -31,7 +31,7 @@ a {
 }
 
 @each $color in $typography-colors {
-  a.text--#{map-get($color, name)} {
+  a.color-#{map-get($color, name)} {
     @include link(map-get($color, color));
   }
 }

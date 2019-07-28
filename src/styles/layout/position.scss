@@ -32,27 +32,3 @@
     }
   }
 }
-.scrollable-y {
-  overflow-y: scroll;
-}
-.scrollable-x {
-  overflow-x: scroll;
-}
-.z-force-top {
-  z-index: 2147483647;
-}
-.z-top {
-  z-index: 2147483646;
-}
-.z-high {
-  z-index: 100000;
-}
-.z-mid {
-  z-index: 10000;
-}
-.z-low {
-  z-index: 1000;
-}
-.z-below {
-  z-index: -1;
-}

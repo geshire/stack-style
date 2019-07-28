@@ -18,7 +18,6 @@ export default async (curDir, config, dir, opts) => {
     flattened: false,
     ...opts
   };
-
   const deleteFile = async file => {
     return await fs.promises.unlink(file);
   }
@@ -70,11 +69,15 @@ export default async (curDir, config, dir, opts) => {
       .pipe(gulp.dest(`${curDir}/styles`))
       .pipe(gulp.dest(`${dir}/dist`));
   }
-  
+
   const compileCSS = () => {
     console.log('compile css');
+    const files = [`${curDir}/styles/*/*.scss`];
+    if (opts.loaders) {
+      files.push(opts.loaders);
+    }
     gulp
-      .src(`${curDir}/styles/*/*.scss`)
+      .src(files)
       .pipe(gulpif(!!config.scope, insert.prepend(`.${config.scope}-style {`)))
       .pipe(gulpif(!!config.scope, insert.append('}')))
       .pipe(sass({ outputStyle: options.compressed ? "compressed" : "expanded" }))

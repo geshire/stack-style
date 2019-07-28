@@ -23,12 +23,16 @@ $button-sizes-by-key: (
 ${props.buttonDefaultSize}
 
 // borders
-$shadow: ${config.fx.borderShadow};
 $border-radius-sizes: (
   ${props.fx.borderRadiusSizes}
 );
 $border-colors: (
   ${props.fx.borderColors}
+);
+
+// box shadows
+$box-shadows: (
+  ${props.fx.boxShadows}
 );
 
 // background
@@ -68,6 +72,9 @@ $line-height-sizes: (
 
 // lists
 $lists-striped-color: ${config.layout.listsStripedColor};
+
+// tables
+$tables-striped-color: ${config.layout.tablesStripedColor};
 
 // icons
 $icons-sizes: (

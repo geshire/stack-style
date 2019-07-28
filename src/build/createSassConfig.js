@@ -66,6 +66,9 @@ export default (config) => {
       props.fx[name] = `${props.fx[name] || ""}${arrayItemTemplate(item)}`;
     });
   });
+  config.fx.boxShadows.forEach((shadow) => {
+    props.fx.boxShadows = `${props.fx.boxShadows || ""}${arrayItemTemplate(shadow)}`;
+  });
 
   /* layout
   .......................................*/
