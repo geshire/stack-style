@@ -23,12 +23,16 @@ $button-sizes-by-key: (
 ${props.buttonDefaultSize}
 
 // borders
-$shadow: ${config.fx.borderShadow};
 $border-radius-sizes: (
   ${props.fx.borderRadiusSizes}
 );
 $border-colors: (
   ${props.fx.borderColors}
+);
+
+// box shadows
+$box-shadows: (
+  ${props.fx.boxShadows}
 );
 
 // background

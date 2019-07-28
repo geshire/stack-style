@@ -200,7 +200,6 @@ $button-default-size-height: 35px;
 
 
 // borders
-$shadow: 8px 8px 0px 0px rgba(216, 216, 216, 0.3);
 $border-radius-sizes: (
   (
     name: default,
@@ -248,6 +247,15 @@ $border-colors: (
   (
     name: red-mid,
     color: $red-mid,
+  ),
+  
+);
+
+// box shadows
+$box-shadows: (
+  (
+    name: light,
+    style: 0px 0px 10px rgba(0, 0, 0, 0.05),
   ),
   
 );

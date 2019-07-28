@@ -18,7 +18,9 @@
 .italic {
   font-style: italic;
 }
-.letter-spacing-tight {}
+.letter-spacing-tight {
+  letter-spacing: -1px;
+}
 .letter-spacing-wide {
   letter-spacing: 1px;
 }

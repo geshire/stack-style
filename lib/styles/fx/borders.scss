@@ -158,7 +158,8 @@
   }
 }
 
-// box shadow
-.shadow {
-  box-shadow: $shadow;
+@each $shadow in $box-shadows {
+  &.shadow-#{map-get($shadow, name)} {
+    box-shadow: map-get($shadow, style);
+  }
 }
