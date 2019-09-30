@@ -1,22 +1,22 @@
 .upper {
-  text-transform: uppercase;
+  text-transform: uppercase !important;
 }
 .lower {
-  text-transform: lowercase;
+  text-transform: lowercase !important;
 }
 .underline,
 .hover-underline:hover {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 .no-underline,
 .hover-no-underline:hover {
   text-decoration: none !important;
 }
 .line-through {
-  text-decoration: line-through;
+  text-decoration: line-through !important;
 }
 .italic {
-  font-style: italic;
+  font-style: italic !important;
 }
 .letter-spacing-tight {
   letter-spacing: -1px;

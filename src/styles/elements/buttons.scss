@@ -9,14 +9,14 @@
 @mixin btn() {
   // display
   display: inline-block;
-  padding: 0px $button-default-size-horz-padding;
+  padding: ($button-default-size-height - $button-default-size-font-size) / 2 $button-default-size-horz-padding;
   box-sizing: border-box;
 
   // typography
   font-family: $body-font-family;
   font-size: $button-default-size-font-size;
   text-align: center;
-  height: $button-default-size-height;
+  line-height: 100%;
 
   background-color: transparent;
   border-color: transparent;
@@ -113,9 +113,9 @@
     border-color: map-get($button, active-border-color);
   }
   &.selected {
-    color: map-get($button, active-color);
-    background-color: map-get($button, active-background-color);
-    border-color: map-get($button, active-border-color);
+    color: map-get($button, selected-color);
+    background-color: map-get($button, selected-background-color);
+    border-color: map-get($button, selected-border-color);
   }
   &.processing {
     color: transparent;
@@ -137,31 +137,31 @@
 .btn-circle {
   border-radius: 50% !important;
   &.btn-xxsmall,
-  &.btn-xxsmall.icon--center {
+  &.btn-xxsmall.icon-center {
     height: 25px !important;
     width: 25px !important;
     padding: 0 !important;
   }
   &.btn-xsmall,
-  &.btn-xsmall.icon--center {
+  &.btn-xsmall.icon-center {
     height: 35px !important;
     width: 35px !important;
     padding: 0 !important;
   }
   &.btn-small,
-  &.btn-small.icon--center {
+  &.btn-small.icon-center {
     height: 35px !important;
     width: 35px !important;
     padding: 0 !important;
   }
   &.btn-medium,
-  &.btn-medium.icon--center {
+  &.btn-medium.icon-center {
     height: 40px !important;
     width: 40px !important;
     padding: 0 !important;
   }
   &.btn-large,
-  &.btn-large.icon--center {
+  &.btn-large.icon-center {
     height: 50px !important;
     width: 50px !important;
     padding: 0 !important;
@@ -178,10 +178,10 @@
 @each $media-size in $media-screen-size-keys {
   @media #{map-get($media-screen-sizes, $media-size)} {
     @each $button in $button-sizes {
+      $btnHeight: (map-get($button, height) - map-get($button, font-size)) / 2;
       .#{$media-size}btn-#{map-get($button, name)} {
-        padding: 0 map-get($button, horz-padding) 1px map-get($button, horz-padding);
+        padding: $btnHeight map-get($button, horz-padding) $btnHeight map-get($button, horz-padding);
         font-size: map-get($button, font-size);
-        height: map-get($button, height);
       }
     }
   }
@@ -191,46 +191,32 @@
 /* buttons group
 ......................................*/
 .btn-group {
-  &.btn-group-center,
-  &.btn-group-left,
-  &.btn-group-right {
-    @each $button in $button-styles {
-      .btn-#{map-get($button, name)} {
-        display: inline-block;
-        float: none;
-      }
-    }
-  }
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
 
-  &.btn-group-center {
-    text-align: center;
+  &.horz-align-right {
+    justify-content: flex-end;
   }
-  &.btn-group-left {
-    text-align: left;
+  &.horz-align-left {
+    justify-content: flex-start;
   }
-  &.btn-group-right {
-    text-align: right;
-  }
-
-  &:after {
-    content: ' ';
-    clear: both;
-    height: 0;
-    font-size: 0;
-    visibility: hidden;
-    display: block;
+  &.horz-align-center {
+    justify-content: center;
   }
 
   @each $button in $button-styles {
     .btn-#{map-get($button, name)} {
       display: block;
-      float: left;
       border-radius: 0;
-      &.is-selected {
-        box-shadow: inset 0px 0px 7px 0px rgba(170,170,170,0.4);
+      &.selected {
+        color: map-get($button, selected-color) !important;
+        background-color: map-get($button, selected-background-color) !important;
+        border-color: map-get($button, selected-border-color) !important;
       }
     }
-    .btn-#{map-get($button, name)}:nth-child(odd),
+    &> .btn-#{map-get($button, name)}:nth-child(odd),
     div:nth-child(odd) .btn-#{map-get($button, name)},
     .select:nth-child(odd) .btn-#{map-get($button, name)} {
       border-right: 1px solid map-get($button, border-color);
@@ -242,7 +228,7 @@
         z-index: 10000;
       }
     }
-    .btn-#{map-get($button, name)}:nth-child(even),
+    &> .btn-#{map-get($button, name)}:nth-child(even),
     div:nth-child(even) .btn-#{map-get($button, name)},
     .select:nth-child(even) .btn-#{map-get($button, name)}  {
       border-left: 1px solid transparent;
@@ -255,20 +241,15 @@
         z-index: 10000;
       }
     }
-    .btn-#{map-get($button, name)}:first-child,
+    &> .btn-#{map-get($button, name)}:first-child,
     div:first-child .btn-#{map-get($button, name)},
     .select:first-child .btn-#{map-get($button, name)} {
-      border-left: 1px solid map-get($button, hover-border-color);
+      border-left: 1px solid map-get($button, border-color);
       border-radius: 5px 0 0 5px;
     }
-    .btn-#{map-get($button, name)}:last-child {
-      border-right: 1px solid map-get($button, hover-border-color);
+    &> .btn-#{map-get($button, name)}:last-child {
+      border-right: 1px solid map-get($button, border-color);
       border-radius: 0 5px 5px 0;
-    }
-
-    div .btn-#{map-get($button, name)}:last-child,
-    .select .btn-#{map-get($button, name)}:last-child {
-      border-radius: 0px;
     }
     div:last-child .btn-#{map-get($button, name)},
     .select:last-child .btn-#{map-get($button, name)} {

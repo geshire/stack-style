@@ -11,6 +11,7 @@ $gray-xlight: #FBFBFB;
 $gray-light: #F2F2F2; 
 $gray-mid: #E2E2E2; 
 $gray-dark: #989898; 
+$blue-xlight: #EFF9FF; 
 $blue-light: #D0ECFD; 
 $blue-mid: #244DCB; 
 $blue-dark: #1235A1; 
@@ -41,11 +42,11 @@ $body-font-family: $source-sans-pro;
 $body-font-size: 16px; 
 $body-color: $charcoal; 
 $body-font-weight: 400; 
-$body-link-color: $blue-dark; 
+$body-link-color: $blue-mid; 
 $body-line-height: 140%; 
 $body-link-hover-color: $blue-black; 
 $body-link-active-color: $blue-black; 
-$body-link-visited-color: $blue-black; 
+$body-link-visited-color: $blue-mid; 
 $body-link-text-decoration: none; 
 $body-link-text-decoration-hover: underline; 
 
@@ -67,7 +68,7 @@ $button-styles: (
     hover-color: $white,
     hover-background-color: $blue-dark,
     hover-border-color: $blue-dark,
-    selected-text-color: $white,
+    selected-color: $white,
     selected-background-color: $blue-dark,
     selected-border-color: $blue-dark,
   ),
@@ -86,7 +87,7 @@ $button-styles: (
     hover-color: $blue-dark,
     hover-background-color: $white,
     hover-border-color: $blue-dark,
-    selected-text-color: $blue-dark,
+    selected-color: $blue-dark,
     selected-background-color: $blue-dark,
     selected-border-color: $blue-dark,
   ),
@@ -105,7 +106,7 @@ $button-styles: (
     hover-color: $white,
     hover-background-color: $green-dark,
     hover-border-color: $green-dark,
-    selected-text-color: $white,
+    selected-color: $white,
     selected-background-color: $green-dark,
     selected-border-color: $green-dark,
   ),
@@ -124,9 +125,9 @@ $button-styles: (
     hover-color: $black,
     hover-background-color: $white,
     hover-border-color: $gray-dark,
-    selected-text-color: $black,
-    selected-background-color: $white,
-    selected-border-color: $gray-dark,
+    selected-color: $white,
+    selected-background-color: $blue-mid,
+    selected-border-color: $blue-mid,
   ),
   (
     name: navy,
@@ -143,9 +144,28 @@ $button-styles: (
     hover-color: $white,
     hover-background-color: $blue-black,
     hover-border-color: $blue-black,
-    selected-text-color: $white,
+    selected-color: $white,
     selected-background-color: $blue-black,
     selected-border-color: $blue-black,
+  ),
+  (
+    name: red,
+    border-radius: 7px,
+    border-color: $red-mid,
+    border-width: 1px,
+    color: $white,
+    background-color: $red-mid,
+    font-weight: 600,
+    font-family: $source-sans-pro,
+    active-color: $white,
+    active-background-color: $red-dark,
+    active-border-color: $red-dark,
+    hover-color: $white,
+    hover-background-color: $red-dark,
+    hover-border-color: $red-dark,
+    selected-color: $white,
+    selected-background-color: $red-dark,
+    selected-border-color: $red-dark,
   ),
   
 );
@@ -233,6 +253,10 @@ $border-colors: (
     color: $gray-dark,
   ),
   (
+    name: blue-light,
+    color: $blue-light,
+  ),
+  (
     name: blue-mid,
     color: $blue-mid,
   ),
@@ -247,6 +271,10 @@ $border-colors: (
   (
     name: red-mid,
     color: $red-mid,
+  ),
+  (
+    name: peach-mid,
+    color: $peach-mid,
   ),
   
 );
@@ -263,6 +291,10 @@ $box-shadows: (
 // background
 $background-colors: (
   (
+    name: blue-xlight,
+    color: $blue-xlight,
+  ),
+  (
     name: blue-light,
     color: $blue-light,
   ),
@@ -273,6 +305,10 @@ $background-colors: (
   (
     name: blue-dark,
     color: $blue-dark,
+  ),
+  (
+    name: blue-black,
+    color: $blue-black,
   ),
   (
     name: green-light,
@@ -400,6 +436,10 @@ $typography-colors: (
     name: yellow,
     color: $yellow-mid,
   ),
+  (
+    name: peach,
+    color: $peach-mid,
+  ),
   
 );
 
@@ -487,7 +527,7 @@ $tables-striped-color: $gray-xlight;
 $icons-sizes: (
   (
     name: default,
-    size: 35px,
+    size: 20px,
   ),
   (
     name: xxsmall,
@@ -495,40 +535,40 @@ $icons-sizes: (
   ),
   (
     name: xsmall,
-    size: 15px,
+    size: 12px,
   ),
   (
     name: small,
-    size: 25px,
+    size: 16px,
   ),
   (
     name: medium,
-    size: 35px,
+    size: 20px,
   ),
   (
     name: large,
-    size: 45px,
+    size: 25px,
   ),
   (
     name: xlarge,
-    size: 55px,
+    size: 35px,
   ),
   (
     name: xxlarge,
-    size: 65px,
+    size: 45px,
   ),
   
 );
 
 $icons-sizes-by-key: (
-  default: 35px,
+  default: 20px,
   xxsmall: 8px,
-  xsmall: 15px,
-  small: 25px,
-  medium: 35px,
-  large: 45px,
-  xlarge: 55px,
-  xxlarge: 65px,
+  xsmall: 12px,
+  small: 16px,
+  medium: 20px,
+  large: 25px,
+  xlarge: 35px,
+  xxlarge: 45px,
 
 );
 
@@ -563,6 +603,22 @@ $icons-colors: (
 // forms
 $input-styles: (
   (
+    name: simple,
+    background-color: $white,
+    focus-background-color: $white,
+    error-background-color: $white,
+    color: $charcoal,
+    focus-color: $black,
+    error-color: $charcoal,
+    placeholder-color: $gray-dark,
+    placeholder-focus-color: $gray-dark,
+    placeholder-error-color: $red-mid,
+    border-width: 0px,
+    border-color: transparent,
+    border-focus-color: transparent,
+    border-error-color: transparent,
+  ),
+  (
     name: white,
     border-radius: 3px,
     background-color: $white,
@@ -596,6 +652,41 @@ $input-styles: (
     border-focus-color: $gray-dark,
     border-error-color: $red-mid,
   ),
+  (
+    name: gray-light,
+    border-radius: 3px,
+    background-color: $gray-xlight,
+    focus-background-color: $white,
+    error-background-color: $red-light,
+    color: $charcoal,
+    focus-color: $black,
+    error-color: $charcoal,
+    placeholder-color: $gray-dark,
+    placeholder-focus-color: $gray-dark,
+    placeholder-error-color: $red-mid,
+    border-width: 1px,
+    border-color: $gray-mid,
+    border-focus-color: $gray-mid,
+    border-error-color: $red-mid,
+    box-shadow-focus: 0 0 10px 0 rgba(0,0,0,.1),
+  ),
+  (
+    name: navy,
+    border-radius: 3px,
+    background-color: $blue-black,
+    focus-background-color: $blue-black,
+    error-background-color: $blue-black,
+    color: $white,
+    focus-color: $white,
+    error-color: $white,
+    placeholder-color: $white,
+    placeholder-focus-color: $white,
+    placeholder-error-color: $white,
+    border-width: 1px,
+    border-color: $blue-black,
+    border-focus-color: $blue-black,
+    border-error-color: $blue-black,
+  ),
   
 );
 $input-sizes-by-key: (
@@ -627,6 +718,13 @@ large: (
     height: 50px,
   ),
   
+xlarge: (
+    name: xlarge,
+    font-size: 21px,
+    horz-padding: 20px,
+    height: 60px,
+  ),
+  
 
 );
 $input-sizes: (
@@ -654,6 +752,12 @@ $input-sizes: (
     horz-padding: 15px,
     height: 50px,
   ),
+  (
+    name: xlarge,
+    font-size: 21px,
+    horz-padding: 20px,
+    height: 60px,
+  ),
   
 );
 
@@ -668,9 +772,9 @@ $checkbox-styles: (
     label-hover-color: $black,
     label-error-color: $charcoal,
     border-width: 1px,
-    border-color: $gray-light,
+    border-color: $gray-mid,
     border-radius: 3px,
-    border-hover-color: $gray-mid,
+    border-hover-color: $gray-dark,
     border-error-color: $red-mid,
     border-checked-color: $blue-mid,
   ),
@@ -687,9 +791,9 @@ $checkbox-styles-by-key: (
     label-hover-color: $black,
     label-error-color: $charcoal,
     border-width: 1px,
-    border-color: $gray-light,
+    border-color: $gray-mid,
     border-radius: 3px,
-    border-hover-color: $gray-mid,
+    border-hover-color: $gray-dark,
     border-error-color: $red-mid,
     border-checked-color: $blue-mid,
   ),

@@ -42,6 +42,9 @@
 
   // focus
   &:focus {
+    @if map-get($props, box-shadow-focus) {
+      box-shadow: map-get($props, box-shadow-focus);
+    }
     &::placeholder {
       color: map-get($props, placeholder-focus-color);
     }
