@@ -21,3 +21,12 @@ All notable changes to this project will be documented in this file.
 - Refactor form sass for smaller output
 - Add box shadows
 - Allow for custom sass files
+
+## [0.0.1-alpha.4] - 2019-09-30
+- Fix group button styling
+- Fix checkbox positioning
+- Add input box shadow option
+- Add flex display class
+- Add flex box alignment classes
+- Fix circle button sizing
+- Ensure typography util classes are applied
