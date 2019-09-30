@@ -18,6 +18,9 @@
     .#{$media-size}inline {
       display: inline !important;
     }
+    .#{$media-size}flex {
+      display: flex !important;
+    }
 
     /* visibility
     .....................................*/
