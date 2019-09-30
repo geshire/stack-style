@@ -32,14 +32,23 @@ $btn-large-width: map-get(map-get($button-sizes-by-key, large), font-size);
   &.btn-small {
     width: 35px;
     background-size: $btn-small-width - 1 $btn-small-width - 1;
+    &.btn-circle {
+      background-size: ($btn-small-width * 1.5) - 1 ($btn-small-width * 1.5) - 1;
+    }
   }
   &.btn-medium {
     width: 40px;
     background-size: $btn-medium-width - 1 $btn-medium-width - 1;
+    &.btn-circle {
+      background-size: ($btn-medium-width * 1.5) - 1 ($btn-medium-width * 1.5) - 1;
+    }
   }
   &.btn-large {
     width: 50px;
     background-size: $btn-large-width - 1 $btn-large-width - 1;
+    &.btn-circle {
+      background-size: ($btn-large-width * 1.5) - 1 ($btn-large-width * 1.5) - 1;
+    }
   }
 }
 
