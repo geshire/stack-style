@@ -30,3 +30,12 @@ All notable changes to this project will be documented in this file.
 - Add flex box alignment classes
 - Fix circle button sizing
 - Ensure typography util classes are applied
+
+## [0.0.1-beta.1] - 2019-09-30
+- Add wysiwyg styles
+- Add color hover states
+- Add truncate class
+- Add line-wide class (for wide line heights)
+- Add flex box classes for different screen sizes
+- Add circle radius class
+- Add background color focus states
