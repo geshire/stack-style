@@ -37,5 +37,7 @@ All notable changes to this project will be documented in this file.
 - Add truncate class
 - Add line-wide class (for wide line heights)
 - Add flex box classes for different screen sizes
+- Add flex box classes for handling text wrapping
 - Add circle radius class
 - Add background color focus states
+- Optimize build size

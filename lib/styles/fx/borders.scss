@@ -157,6 +157,9 @@
     }
   }
 }
+.radius-circle {
+  border-radius: 50%;
+}
 
 @each $shadow in $box-shadows {
   &.shadow-#{map-get($shadow, name)} {

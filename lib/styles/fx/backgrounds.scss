@@ -8,7 +8,8 @@
   .bg-#{map-get($background, name)} {
     background-color: map-get($background, color);
   }
-  .hover-bg-#{map-get($background, name)}:hover {
+  .hover-bg-#{map-get($background, name)}:hover,
+  .hover-bg-#{map-get($background, name)}:focus {
     background-color: map-get($background, color);
   }
 }

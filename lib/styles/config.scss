@@ -49,6 +49,9 @@ $body-link-active-color: $blue-black;
 $body-link-visited-color: $blue-mid; 
 $body-link-text-decoration: none; 
 $body-link-text-decoration-hover: underline; 
+$body-wysiwyg-font-size: 21px; 
+$body-wysiwyg-line-height: 160%; 
+$body-wysiwyg-bold-weight: 700; 
 
 
 // buttons
@@ -482,6 +485,7 @@ $text: (
     font-size: 18px,
     line-height: 140%,
     line-tight: 125%,
+    line-wide: 160%,
     default-weight: 400,
     semi-weight: 600,
     bold-weight: 700,
@@ -490,6 +494,7 @@ $text: (
     font-size: 16px,
     line-height: 140%,
     line-tight: 125%,
+    line-wide: 160%,
     default-weight: 400,
     semi-weight: 600,
     bold-weight: 700,
@@ -498,6 +503,7 @@ $text: (
     font-size: 14px,
     line-height: 140%,
     line-tight: 115%,
+    line-wide: 160%,
     default-weight: 400,
     semi-weight: 600,
     bold-weight: 700,
@@ -506,6 +512,7 @@ $text: (
     font-size: 12px,
     line-height: 140%,
     line-tight: 115%,
+    line-wide: 160%,
     default-weight: 400,
     semi-weight: 600,
     bold-weight: 700,
