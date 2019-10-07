@@ -86,6 +86,7 @@ export default async (curDir, config, dir, opts) => {
         overrideBrowsersList: ['last 2 versions'],
           cascade: false
         }))
+      .pipe(cleanCSS({ level: { 2: { restructureRules: true } } }))
       .pipe(gulp.dest(`${dir}/dist`))
       .pipe(cleanCSS())
       .pipe(concat('styles.min.css'))
