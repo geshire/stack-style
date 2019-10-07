@@ -11,9 +11,11 @@ body {
 }
 
 @each $color in $typography-colors {
-  .color-#{map-get($color, name)} {
+  .color-#{map-get($color, name)},
+  .hover-color-#{map-get($color, name)}:hover,
+  .hover-color-#{map-get($color, name)}:focus {
     color: map-get($color, color) !important;
-  }
+  }  
 }
 
 @mixin text($text-item) {
@@ -35,6 +37,12 @@ body {
   &.line-tight,
   .line-tight {
     line-height: map-get($text-item, line-tight);
+  }
+  @if map-get($text-item, line-wide) {
+    &.line-wide,
+    .line-wide {
+      line-height: map-get($text-item, line-wide);
+    }
   }
 }
 

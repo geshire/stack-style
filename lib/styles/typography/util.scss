@@ -30,3 +30,8 @@
 .word-break {
   word-break: break-word;
 }
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -23,6 +23,10 @@
   float: right;
   box-sizing: border-box;
 }
+.row.vert-align-top {
+  align-items: flex-start;
+  display: flex;
+}
 .row.vert-align-middle {
   align-items: center;
   display: flex;
@@ -35,12 +39,9 @@
   justify-content: center;
   display: flex;
 }
-.row {
-  .horz-align-right {
-    margin-left: auto;
-  }
+.row.nowrap {
+  flex-wrap: nowrap;
 }
-
 .height-100 {
   height: 100%;
 }
@@ -53,13 +54,32 @@
       float: none;
     }
     .#{$media-size}width-100 {
-      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+    }
+    .row {
+      .#{$media-size}horz-align-right {
+        margin-left: auto;
+      }
+      .#{$media-size}vert-align-top {
+        align-self: flex-start;
+      }
+      .#{$media-size}fill-space {
+        flex-grow: 1;
+      }
+      .#{$media-size}nowrap {
+        flex-shrink: 0;
+      }
+      .row.#{$media-size}nowrap {
+        flex-shrink: 1;
+      }
     }
 
     @each $columns in $grid-col-sets {
       @for $i from 1 through $columns {
         .#{$media-size}width-#{$i}-#{$columns} {
-          width: $i * 100% / $columns;
+          max-width: $i * 100% / $columns;
+          min-width: $i * 100% / $columns;
           min-height: 1px;
         }
       }
