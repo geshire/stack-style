@@ -31,7 +31,7 @@ All notable changes to this project will be documented in this file.
 - Fix circle button sizing
 - Ensure typography util classes are applied
 
-## [0.0.1-beta.1] - 2019-09-30
+## [0.0.1-beta.1] - 2019-10-07
 - Add wysiwyg styles
 - Add color hover states
 - Add truncate class
