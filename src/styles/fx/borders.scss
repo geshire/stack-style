@@ -159,6 +159,9 @@
 }
 .radius-circle {
   border-radius: 50%;
+  img {
+    display: block;
+  }
 }
 
 @each $shadow in $box-shadows {
