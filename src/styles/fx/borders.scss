@@ -94,7 +94,7 @@
   z-index: 1;
   position: relative;
 
-  &:before {
+  &::before {
     content: " ";
     display: block;
     background: map-get(nth($border-colors, 1), color);
@@ -111,10 +111,10 @@
 @each $color in $border-colors {
   .border-#{map-get($color, name)} {
     border-color: map-get($color, color) !important;
-    &.border-center:before {
+    &.border-center::before {
       background: map-get($color, color) !important;
     }
-    &.vert-rule:before {
+    &.vert-rule::before {
       background: map-get($color, color) !important;
     }
   }
@@ -159,6 +159,9 @@
 }
 .radius-circle {
   border-radius: 50%;
+  img {
+    display: block;
+  }
 }
 
 @each $shadow in $box-shadows {

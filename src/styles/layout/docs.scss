@@ -19,7 +19,7 @@ html.sticky-footer {
     min-height: 100%;
     margin-bottom: -$footer-height;
 
-    &:after {
+    &::after {
       content: " ";
       display: block;
       height: $footer-height;

@@ -7,7 +7,7 @@ i {
   display: inline-block;
   white-space: nowrap;
   background-position: center center;
-  &:before {
+  &::before {
     content: 'i';
     color: transparent;
   }
