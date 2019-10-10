@@ -45,3 +45,4 @@ All notable changes to this project will be documented in this file.
 ## [0.0.1-beta.2] - 2019-10-10
 - Update wysiwyg styles
 - Images within radius circle class should be display block
+- Fix syntax errors with ::before and ::after
