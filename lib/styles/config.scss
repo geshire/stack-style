@@ -818,6 +818,11 @@ default: (
     label-font-size: 16px,
   ),
   
+large: (
+    name: large,
+    label-font-size: 18px,
+  ),
+  
 
 );
 $checkbox-sizes: (
@@ -828,6 +833,10 @@ $checkbox-sizes: (
   (
     name: default,
     label-font-size: 16px,
+  ),
+  (
+    name: large,
+    label-font-size: 18px,
   ),
   
 );
