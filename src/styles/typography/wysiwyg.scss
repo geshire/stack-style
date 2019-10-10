@@ -76,7 +76,7 @@
     padding-left: 0!important;
     margin: 21px 0px 21px 21px;;
     li {
-      &:before {
+      &::before {
         content: none !important;
       }
       padding-left: 0 !important;
@@ -93,7 +93,7 @@
     text-decoration: none;
     &::after {
       content: "";
-      background-color:: $body-color;
+      background-color: $body-color;
       width: 100%;
       height: 1px;
       position: absolute;
