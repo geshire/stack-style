@@ -45,4 +45,7 @@ All notable changes to this project will be documented in this file.
 ## [0.0.1-beta.2] - 2019-10-10
 - Update wysiwyg styles
 - Images within radius circle class should be display block
+
+## [0.0.1-beta.3] - 2019-10-10
+- Allow for custom css files to be added to build
 - Fix syntax errors with ::before and ::after

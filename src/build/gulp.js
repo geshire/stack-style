@@ -73,8 +73,10 @@ export default async (curDir, config, dir, opts) => {
   const compileCSS = () => {
     console.log('compile css');
     const files = [`${curDir}/styles/*/*.scss`];
-    if (opts.loaders) {
-      files.push(opts.loaders);
+    if (opts.customCSS) {
+      opts.customCSS.forEach(path => {
+        files.push(path);
+      })
     }
     gulp
       .src(files)
