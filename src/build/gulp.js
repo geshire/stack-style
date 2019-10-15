@@ -73,11 +73,6 @@ export default async (curDir, config, dir, opts) => {
   const compileCSS = () => {
     console.log('compile css');
     const files = [`${curDir}/styles/*/*.scss`];
-    if (opts.customCSS) {
-      opts.customCSS.forEach(path => {
-        files.push(path);
-      })
-    }
     gulp
       .src(files)
       .pipe(gulpif(!!config.scope, insert.prepend(`.${config.scope}-style {`)))
@@ -90,9 +85,33 @@ export default async (curDir, config, dir, opts) => {
         }))
       .pipe(cleanCSS({ level: { 2: { restructureRules: true } } }))
       .pipe(gulp.dest(`${dir}/dist`))
-      .pipe(cleanCSS())
       .pipe(concat('styles.min.css'))
       .pipe(gulp.dest(`${dir}/dist`))
+  };
+
+  const compileCustomCSS = () => {
+    console.log('compile custom css');
+    const files = [];
+    if (!opts.customCSS) {
+      return;
+    }
+    opts.customCSS.forEach(path => {
+      files.push(path);
+    })
+    gulp
+      .src(files)
+      .pipe(gulpif(!!config.scope, insert.prepend(`.${config.scope}-style {`)))
+      .pipe(gulpif(!!config.scope, insert.append('}')))
+      .pipe(sass({ outputStyle: options.compressed ? "compressed" : "expanded" }))
+      .pipe(autoprefixer({
+        overrideBrowsersList: ['last 2 versions'],
+          cascade: false
+        }))
+      .pipe(gulp.dest(`${dir}/dist`))
+      .pipe(cleanCSS())
+      .pipe(concat('styles.custom.min.css'))
+      .pipe(gulp.dest(`${dir}/dist`))
+
   };
 
   const generateSvg = async () => {
@@ -113,6 +132,7 @@ export default async (curDir, config, dir, opts) => {
   await createConfig();
   // await copyConfig();
   await compileCSS();
+  await compileCustomCSS();
   await generateSvg();
   await compileIconCSS();
 }

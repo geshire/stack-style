@@ -49,3 +49,6 @@ All notable changes to this project will be documented in this file.
 ## [0.0.1-beta.3] - 2019-10-10
 - Allow for custom css files to be added to build
 - Fix syntax errors with ::before and ::after
+
+## [0.0.1-beta.4] - 2019-10-15
+- Remove aggressive compression for custom assets to avoid compile issues
