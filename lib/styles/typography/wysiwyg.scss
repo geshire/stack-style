@@ -42,26 +42,20 @@
     color: #000000;
     font-family: $body-font-family;
   }
-  h1 {
+  h1, h2 {
     font-size: 32px;
-    font-weight: 700;
-    line-height: 103%;
-    margin: 42px 0px 10px 0px;
-  }
-  h2 {
-    font-size: 28px;
     font-weight: 700;
     line-height: 105%;
     margin: 42px 0px 10px 0px;
   }
   h3 {
-    font-size: 21px;
+    font-size: 24px;
     font-weight: 700;
     line-height: 105%;
     margin: 42px 0px 7px 0px;
   }
   h4 {
-    font-size: 18px;
+    font-size: 21px;
     font-weight: 600;
     line-height: 140%;
     margin: 42px 0px 7px 0px;
@@ -118,5 +112,17 @@
     display: block;
     margin: 21px 0px 42px 0px;
     box-shadow: 0 0 10px rgba(0,0,0,.05);
+  }
+  figure {
+    max-width: 100% !important;
+    margin: 21px 0 42px;
+    img {
+      margin: 0 !important;
+    }
+    figcaption {
+      font-size: 14px;
+      color: #989898;
+      text-align: left;
+    }
   }
 }
