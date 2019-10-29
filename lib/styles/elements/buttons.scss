@@ -6,7 +6,7 @@
 .....................................*/
 
 // button base
-@mixin btn() {
+%btn {
   // display
   display: inline-block;
   padding: ($button-default-size-height - $button-default-size-font-size) / 2 $button-default-size-horz-padding;
@@ -54,19 +54,6 @@
     &:hover, &:focus, &:active, &.is-active {
       cursor: default;
       opacity: .5;
-    }
-  }
-  &.loading,
-  &.processing {
-    position: relative;
-    color: rgba(0, 0, 0, 0);
-    &::before {
-      content: " ";
-      display: block;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      margin: -8px 0 0 -8px;
     }
   }
   &.btn-borderless {
@@ -117,21 +104,6 @@
     background-color: map-get($button, selected-background-color);
     border-color: map-get($button, selected-border-color);
   }
-  &.processing {
-    color: transparent;
-    &::after {
-      content: ' ';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-repeat: no-repeat;
-      background-size: 20%;
-      background-position: 50% 50%;
-      animation: spin 600ms infinite linear;
-    }
-  }
 }
 
 .btn-circle {
@@ -170,7 +142,7 @@
 
 @each $button in $button-styles {
   .btn-#{map-get($button, name)} {
-    @include btn();
+    @extend %btn;
     @include btn-colors($button);
   }
 }

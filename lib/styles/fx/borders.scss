@@ -4,17 +4,20 @@
   BORDERS
 .....................................*/
 
-/* border basis
+/* border positioning
 .....................................*/
-@mixin border() {
+.border-all,
+.border-vert,
+.border-horz,
+.border-top,
+.border-bottom,
+.border-right,
+.border-left {
   border-style: solid;
   border-color: map-get(nth($border-colors, 1), color);
 }
 
-/* border positioning
-.....................................*/
 .border-all {
-  @include border();
   border-width: 1px;
   &.border-mid {
     border-width: 2px;
@@ -24,7 +27,6 @@
   }
 }
 .border-vert {
-  @include border();
   border-top-width: 1px;
   border-bottom-width: 1px;
   &.border-mid {
@@ -37,7 +39,6 @@
   }
 }
 .border-horz {
-  @include border();
   border-left-width: 1px;
   border-right-width: 1px;
   &.border-mid {
@@ -50,7 +51,6 @@
   }
 }
 .border-top {
-  @include border();
   border-top-width: 1px;
   &.border-mid {
     border-top-width: 2px;
@@ -60,7 +60,6 @@
   }
 }
 .border-bottom {
-  @include border();
   border-bottom-width: 1px;
   &.border-mid {
     border-bottom-width: 2px;
@@ -70,7 +69,6 @@
   }
 }
 .border-left {
-  @include border();
   border-left-width: 1px;
   &.border-mid {
     border-left-width: 2px;
@@ -80,7 +78,6 @@
   }
 }
 .border-right {
-  @include border();
   border-right-width: 1px;
   &.border-thin {
     border-right-width: 2px;
