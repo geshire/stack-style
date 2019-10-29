@@ -56,3 +56,7 @@ All notable changes to this project will be documented in this file.
 ## [0.0.1-beta.5] - 2019-10-21
 - Better hierarchy for wysiwyg headers
 - Add wysiwyg styling for figure/figcaption
+
+## [0.0.1-beta.6] - 2019-10-28
+- Use box shadow for link underlines instead of after pseudo element
+- Add screensize prefixes for nowrap class

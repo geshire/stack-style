@@ -5,9 +5,7 @@
 .....................................*/
 
 @each $background in $background-colors {
-  .bg-#{map-get($background, name)} {
-    background-color: map-get($background, color);
-  }
+  .bg-#{map-get($background, name)},
   .hover-bg-#{map-get($background, name)}:hover,
   .hover-bg-#{map-get($background, name)}:focus {
     background-color: map-get($background, color);

@@ -15,7 +15,7 @@ body {
   .hover-color-#{map-get($color, name)}:hover,
   .hover-color-#{map-get($color, name)}:focus {
     color: map-get($color, color) !important;
-  }  
+  }
 }
 
 @mixin text($text-item) {
@@ -37,6 +37,12 @@ body {
   &.line-tight,
   .line-tight {
     line-height: map-get($text-item, line-tight);
+  }
+  @if map-get($text-item, line-normal) {
+    &.line-normal,
+    .line-normal {
+      line-height: map-get($text-item, line-tight);
+    }
   }
   @if map-get($text-item, line-wide) {
     &.line-wide,
@@ -63,6 +69,18 @@ body {
   &.weight-bold,
   .weight-bold {
     font-weight: map-get($header-item, bold-weight);
+  }
+  @if map-get($header-item, line-normal) {
+    &.line-normal,
+    .line-normal {
+      line-height: map-get($header-item, line-tight);
+    }
+  }
+  @if map-get($header-item, line-wide) {
+    &.line-wide,
+    .line-wide {
+      line-height: map-get($header-item, line-wide);
+    }
   }
 }
 

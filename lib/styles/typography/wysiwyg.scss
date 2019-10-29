@@ -8,6 +8,9 @@
   line-height: $body-wysiwyg-line-height;
   &.text-1 {
     font-size: 18px;
+    &.line-normal {
+      line-height: 142.5% !important;
+    }
     p {
       margin-bottom: 18px;
     }
@@ -85,15 +88,7 @@
   u, a {
     position: relative;
     text-decoration: none;
-    &::after {
-      content: "";
-      background-color: $body-color;
-      width: 100%;
-      height: 1px;
-      position: absolute;
-      bottom: 3px;
-      left: 0;
-    }
+    box-shadow: inset 0 0px 0 white, inset 0 -1px 0 $body-color;
   }
   a:link,
   a:visited {

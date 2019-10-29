@@ -39,15 +39,15 @@
   justify-content: center;
   display: flex;
 }
-.row.nowrap {
-  flex-wrap: nowrap;
-}
 .height-100 {
   height: 100%;
 }
 
 @each $media-size in $media-screen-size-keys {
   @media #{map-get($media-screen-sizes, $media-size)} {
+    .row.#{$media-size}nowrap {
+      flex-wrap: nowrap;
+    }
     .#{$media-size}width-centered {
       margin-left: auto;
       margin-right: auto;
