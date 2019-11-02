@@ -6,29 +6,28 @@
   font-weight: $body-font-weight;
   font-size: $body-wysiwyg-font-size;
   line-height: $body-wysiwyg-line-height;
+  @media (max-width: 640px) {
+    &.medium-down-text-1 {
+      font-size: 18px;
+      &.line-normal {
+        line-height: 142.5% !important;
+      }
+    }
+  }
   &.text-1 {
     font-size: 18px;
     &.line-normal {
       line-height: 142.5% !important;
     }
-    p {
-      margin-bottom: 18px;
-    }
   }
   &.text-2 {
     font-size: 16px;
-    p {
-      margin-bottom: 16px;
-    }
   }
   &.text-3 {
     font-size: 14px;
-    p {
-      margin-bottom: 14px;
-    }
   }
   p {
-    margin-bottom: 21px;
+    margin-bottom: 1em;
   }
   i {
     background: none !important;
@@ -46,32 +45,32 @@
     font-family: $body-font-family;
   }
   h1, h2 {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 700;
     line-height: 105%;
-    margin: 42px 0px 10px 0px;
+    margin: 2em 0px .5em 0px;
   }
   h3 {
     font-size: 24px;
     font-weight: 700;
     line-height: 105%;
-    margin: 42px 0px 7px 0px;
+    margin: 2em 0px .4em 0px;
   }
   h4 {
     font-size: 21px;
     font-weight: 600;
     line-height: 140%;
-    margin: 42px 0px 7px 0px;
+    margin: 2em 0px .4em 0px;
   }
   hr {
     border: none;
     border-bottom: 1px solid #e2e2e2;
-    margin: 42px 0px;
+    margin: 2em 0px;
   }
   ul, ol {
     margin-left: 25px;
     padding-left: 0!important;
-    margin: 21px 0px 21px 21px;;
+    margin: 1em 0px 1em 1em;
     li {
       &::before {
         content: none !important;
@@ -105,12 +104,12 @@
     width: 100%;
     height: auto;
     display: block;
-    margin: 21px 0px 42px 0px;
+    margin: 1em 0px 2em 0px;
     box-shadow: 0 0 10px rgba(0,0,0,.05);
   }
   figure {
     max-width: 100% !important;
-    margin: 21px 0 42px;
+    margin: 1em 0 2em;
     img {
       margin: 0 !important;
     }
