@@ -60,3 +60,7 @@ All notable changes to this project will be documented in this file.
 ## [0.0.1-beta.6] - 2019-10-28
 - Use box shadow for link underlines instead of after pseudo element
 - Add screensize prefixes for nowrap class
+
+## [0.0.1-beta.7] - 2019-11-03
+- Use ems for WYSIWYG margins
+- Add medium-down text-1 size
