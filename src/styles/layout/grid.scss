@@ -54,8 +54,7 @@
       float: none;
     }
     .#{$media-size}width-100 {
-      max-width: 100%;
-      min-width: 100%;
+      width: 100%;
     }
     .row {
       .#{$media-size}horz-align-right {
@@ -80,7 +79,6 @@
         .#{$media-size}width-#{$i}-#{$columns} {
           max-width: $i * 100% / $columns;
           min-width: $i * 100% / $columns;
-          min-height: 1px;
         }
       }
     }
