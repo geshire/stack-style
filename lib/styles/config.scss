@@ -10,13 +10,14 @@ $black: #000000;
 $gray-xlight: #FBFBFB; 
 $gray-light: #F2F2F2; 
 $gray-mid: #E2E2E2; 
-$gray-dark: #989898; 
+$gray-dark: #757575; 
 $blue-xlight: #EFF9FF; 
 $blue-light: #D0ECFD; 
 $blue-mid: #244DCB; 
 $blue-dark: #1235A1; 
 $blue-black: #0D2470; 
 $blue-bright: #0D4DF1; 
+$yellow-xlight: #fff5e0; 
 $yellow-light: #FFEFCF; 
 $yellow-mid: #FFCA65; 
 $yellow-dark: #FFB72F; 
@@ -279,6 +280,10 @@ $border-colors: (
     name: peach-mid,
     color: $peach-mid,
   ),
+  (
+    name: yellow-mid,
+    color: $yellow-mid,
+  ),
   
 );
 
@@ -332,6 +337,10 @@ $background-colors: (
   (
     name: white,
     color: $white,
+  ),
+  (
+    name: yellow-xlight,
+    color: $yellow-xlight,
   ),
   (
     name: yellow-light,
@@ -528,10 +537,10 @@ $line-height-sizes: (
 );
 
 // lists
-$lists-striped-color: $gray-xlight;
+$lists-striped-color: $gray-light;
 
 // tables
-$tables-striped-color: $gray-xlight;
+$tables-striped-color: $gray-light;
 
 // icons
 $icons-sizes: (

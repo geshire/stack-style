@@ -64,3 +64,9 @@ All notable changes to this project will be documented in this file.
 ## [0.0.1-beta.7] - 2019-11-03
 - Use ems for WYSIWYG margins
 - Add medium-down text-1 size
+
+## [0.0.1-beta.8] - 2020-01-19
+- NPM Audit
+- Update WYSIWG link styling, account for iframes, and tables
+- Add flexbox horizontal alignment classes
+- Fix media size bug where full media queries were not included
