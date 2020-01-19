@@ -78,7 +78,7 @@ export default async (curDir, config, dir, opts) => {
       .pipe(gulpif(!!config.scope, insert.prepend(`.${config.scope}-style {`)))
       .pipe(gulpif(!!config.scope, insert.append('}')))
       .pipe(sass({ outputStyle: options.compressed ? "compressed" : "expanded" }))
-      .pipe(gulpif(!!options.flattend, flatten()))
+      .pipe(gulpif(!!options.flatten, flatten()))
       .pipe(autoprefixer({
         overrideBrowsersList: ['last 2 versions'],
           cascade: false

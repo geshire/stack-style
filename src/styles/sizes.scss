@@ -22,7 +22,6 @@ $xlarge-only: only screen and (min-width: 1025px) and (max-width: 1200px);
 $xlarge-down: only screen (max-width: 1200px);
 
 // xxlarge 1200px up
-$xxlarge-only: only screen and (min-width: 1201px);
 $xxlarge-up: only screen and (min-width: 1201px);
 
 $media-screen-size-keys: (
@@ -57,6 +56,5 @@ $media-screen-sizes: (
   "xlarge-up-": $xlarge-up,
   "xlarge-only-": $xlarge-only,
   "xlarge-down-": $xlarge-down,
-  "xxlarge-only-": $xxlarge-only,
   "xxlarge-up-": $xxlarge-up,
 );
