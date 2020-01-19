@@ -15,7 +15,7 @@ import createSvg from "../svg/create";
 export default async (curDir, config, dir, opts) => {
   const options = {
     compressed: false,
-    flattened: false,
+    flatten: false,
     ...opts
   };
   const deleteFile = async file => {

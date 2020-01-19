@@ -1,28 +1,28 @@
 // xsmall 0px to 480px
-$xsmall-only: only screen and (max-width: 480px);
+$xsmall-only: "only screen and (max-width: 480px)";
 
 // small 481px to 640px
-$small-up: only screen and (min-width: 481px);
-$small-only: only screen and (min-width: 481px) and (max-width: 640px);
-$small-down: only screen and (max-width: 640px);
+$small-up: "only screen and (min-width: 481px)";
+$small-only: "only screen and (min-width: 481px) and (max-width: 640px)";
+$small-down: "only screen and (max-width: 640px)";
 
 // medium 641px to 768px
-$medium-up: only screen and (min-width: 641px);
-$medium-only: only screen and (min-width: 641px) and (max-width: 768px);
-$medium-down: only screen and (max-width: 768px);
+$medium-up: "only screen and (min-width: 641px)";
+$medium-only: "only screen and (min-width: 641px) and (max-width: 768px)";
+$medium-down: "only screen and (max-width: 768px)";
 
 // large 769px to 1024px
-$large-up: only screen and (min-width: 769px);
-$large-only: only screen and (min-width: 769px) and (max-width: 1024px);
-$large-down: only screen and (max-width: 1024px);
+$large-up: "only screen and (min-width: 769px)";
+$large-only: "only screen and (min-width: 769px) and (max-width: 1024px)";
+$large-down: "only screen and (max-width: 1024px)";
 
 // xlarge 1025px to 1200px
-$xlarge-up: only screen and (min-width: 1025px);
-$xlarge-only: only screen and (min-width: 1025px) and (max-width: 1200px);
-$xlarge-down: only screen (max-width: 1200px);
+$xlarge-up: "only screen and (min-width: 1025px)";
+$xlarge-only: "only screen and (min-width: 1025px) and (max-width: 1200px)";
+$xlarge-down: "only screen (max-width: 1200px)";
 
 // xxlarge 1200px up
-$xxlarge-up: only screen and (min-width: 1201px);
+$xxlarge-up: "only screen and (min-width: 1201px)";
 
 $media-screen-size-keys: (
   "",
@@ -42,7 +42,7 @@ $media-screen-size-keys: (
 );
 
 $media-screen-sizes: (
-  "": only screen,
+  "": "only screen",
   "xsmall-only-": $xsmall-only,
   "small-up-": $small-up,
   "small-only-": $small-only,

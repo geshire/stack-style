@@ -87,6 +87,7 @@
         .#{$media-size}width-#{$i}-#{$columns} {
           max-width: $i * 100% / $columns;
           min-width: $i * 100% / $columns;
+          min-height: 1px;
         }
       }
     }
