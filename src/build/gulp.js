@@ -16,6 +16,7 @@ export default async (curDir, config, dir, opts) => {
   const options = {
     compressed: false,
     flatten: false,
+    minify: false,
     ...opts
   };
   const deleteFile = async file => {
@@ -83,7 +84,7 @@ export default async (curDir, config, dir, opts) => {
         overrideBrowsersList: ['last 2 versions'],
           cascade: false
         }))
-      .pipe(cleanCSS({ level: { 2: { restructureRules: true } } }))
+      .pipe(gulpif(!!options.minify, cleanCSS({ level: { 2: { restructureRules: true } } })))
       .pipe(gulp.dest(`${dir}/dist`))
       .pipe(concat('styles.min.css'))
       .pipe(gulp.dest(`${dir}/dist`))
@@ -108,7 +109,7 @@ export default async (curDir, config, dir, opts) => {
           cascade: false
         }))
       .pipe(gulp.dest(`${dir}/dist`))
-      .pipe(cleanCSS())
+      .pipe(gulpif(!!options.minify, cleanCSS()))
       .pipe(concat('styles.custom.min.css'))
       .pipe(gulp.dest(`${dir}/dist`))
 
@@ -122,7 +123,7 @@ export default async (curDir, config, dir, opts) => {
     console.log('compile icon css');
     gulp
       .src(`${dir}/dist/icons/*.css`)
-      .pipe(cleanCSS())
+      .pipe(gulpif(!!options.minify, cleanCSS()))
       .pipe(concat('icons.min.css'))
       .pipe(gulp.dest(`${dir}/dist`))
   };
