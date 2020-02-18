@@ -73,3 +73,6 @@ All notable changes to this project will be documented in this file.
 
 ## [0.0.1-beta.9] - 2020-01-20
 - Option to turn on/off minification
+
+## [0.0.1-beta.10] - 2020-02-18
+- Add more flex box alignment options
